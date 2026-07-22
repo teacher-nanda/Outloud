@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OUT LOUD — English with Teacher Nanda</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#FAFAF8;color:#1C2B3A;line-height:1.6}
+.hero{background:linear-gradient(160deg,#1A1008 0%,#5A2A10 45%,#C9531F 100%);color:#fff;padding:72px 32px 60px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 78% 22%,rgba(255,176,103,.18) 0%,transparent 58%)}
+.hero>*{position:relative;z-index:2}
+.kicker{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600}
+h1{font-size:4.2rem;font-weight:900;letter-spacing:-.02em;line-height:1;margin:14px 0 6px}
+h1 em{font-style:normal;color:#FFB067}
+.tag{font-size:1.3rem;color:rgba(255,255,255,.88);font-weight:400}
+.sub{font-size:.98rem;color:rgba(255,255,255,.55);margin-top:20px}
+.wrap{max-width:1080px;margin:0 auto;padding:56px 32px 72px}
+h2{font-size:1.6rem;font-weight:900;color:#2A1A0E;margin:0 0 6px}
+.lede{color:#5A7186;margin-bottom:28px}
+.levels{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:44px}
+@media(max-width:900px){.levels{grid-template-columns:1fr 1fr}.hero h1{font-size:3rem}}
+.lv{border-radius:12px;padding:18px 16px;color:#fff;text-align:center}
+.lv b{display:block;font-size:.72rem;letter-spacing:.18em;opacity:.72;margin-bottom:6px}
+.lv span{font-size:1.06rem;font-weight:900;letter-spacing:.02em}
+.lv i{display:block;font-style:normal;font-size:.78rem;opacity:.82;margin-top:5px}
+.l1{background:#E85D2A}.l2{background:#2A8C5A}.l3{background:#0E7A8A}.l4{background:#1E4D8C}.l5{background:#5B2D8B}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));gap:16px}
+.c{display:block;background:#fff;border:1px solid #E8E2DA;border-radius:14px;padding:22px 24px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s,border-color .18s}
+.c:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(42,26,14,.12);border-color:#C9531F}
+.c .code{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#C9531F;margin-bottom:6px}
+.c .t{font-size:1.28rem;font-weight:800;color:#2A1A0E;margin-bottom:6px}
+.c .d{font-size:.9rem;color:#5A7186;line-height:1.5}
+.c.doc .code{color:#1E4D8C}
+footer{text-align:center;padding:34px;color:#8A7A6A;font-size:.86rem;border-top:1px solid #E8E2DA}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="kicker">Conversational English with teacher Nanda</div>
+  <h1>OUT <em>LOUD</em></h1>
+  <p class="tag">English that leaves your head.</p>
+  <p class="sub">Five levels · thirty missions · a hundred and fifty lessons</p>
+</header>
+
+<div class="wrap">
+  <h2>The path</h2>
+  <p class="lede">Each level is named for who you become, not for the grammar inside it.</p>
+  <div class="levels">
+    <div class="lv l1"><b>A1</b><span>SAY IT</span><i>Your first words, out loud</i></div>
+    <div class="lv l2"><b>A2</b><span>GET AROUND</span><i>Handle the world</i></div>
+    <div class="lv l3"><b>B1</b><span>HOLD YOUR OWN</span><i>Have the conversation</i></div>
+    <div class="lv l4"><b>B2</b><span>SAY WHAT YOU MEAN</span><i>Precision and nuance</i></div>
+    <div class="lv l5"><b>C1</b><span>SOUND LIKE YOU</span><i>Your personality, in English</i></div>
+  </div>
+
+  <h2>Lessons</h2>
+  <p class="lede">Add one card here every time you build a new lesson folder.</p>
+  <div class="cards" id="cards"></div>
+</div>
+
+<footer>OUT LOUD · Teacher Nanda · Cambridge CELTA certified</footer>
+
+<script>
+var courses = [
+  { level: 'B1', folder: 'B1-M1-L1', file: 'index.html', code: 'B1 · Mission 1 · Lesson 1', title: 'Set the Scene', desc: 'Open a story so people want the rest — past continuous for the background, past simple for the event.' },
+  { level: 'B2', folder: 'B2-M1-L1', file: 'index.html', code: 'B2 · Mission 1 · Lesson 1', title: 'Yes, But', desc: 'Disagree without shutting anyone down: concede, pivot, assert.' },
+  { level: 'A2', folder: 'A2-M1-L1', file: 'index.html', code: 'A2 · Mission 1 · Lesson 1', title: 'How Was Your Trip?', desc: 'Tell a trip from start to finish in the past — with -ed endings that people understand first time.' },
+  { level: 'A1', folder: 'A1-M1-L1', file: 'index.html', code: 'A1 · Mission 1 · Lesson 1', title: 'This Is Me', desc: 'Introduce yourself — name, country, job, city — and keep going for a full minute.' },
+  { level: 'A1', folder: 'A1-M1-L2', file: 'index.html', code: 'A1 · Mission 1 · Lesson 2', title: 'Say It Back', desc: 'Spell your name, give your number and email, and ask people to slow down.' },
+  { level: 'C1', folder: 'C1-M1-L1', file: 'index.html', code: 'C1 · Mission 1 · Lesson 1', title: 'Where the Weight Falls', desc: 'Place emphasis by restructuring the sentence — clefts, it-clefts and inversion.' }
+];
+var docs = [
+  { folder: '', file: 'blueprint.html', code: 'Course design', title: 'The OUT LOUD Blueprint', desc: 'All five levels, thirty missions, the activity bank, the media bank and the AI partner prompts.' }
+];
+var host = document.getElementById('cards');
+courses.concat([]).forEach(function(c){
+  var a = document.createElement('a');
+  a.className = 'c'; a.href = c.folder + '/' + c.file;
+  a.innerHTML = '<div class="code">' + c.code + '</div><div class="t">' + c.title + '</div><div class="d">' + c.desc + '</div>';
+  host.appendChild(a);
+});
+docs.forEach(function(c){
+  var a = document.createElement('a');
+  a.className = 'c doc'; a.href = (c.folder ? c.folder + '/' : '') + c.file;
+  a.innerHTML = '<div class="code">' + c.code + '</div><div class="t">' + c.title + '</div><div class="d">' + c.desc + '</div>';
+  host.appendChild(a);
+});
+</script>
+</body>
+</html>

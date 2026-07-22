@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OUT LOUD A1 · M1 · L1 — This Is Me</title>
+<link rel="stylesheet" href="../engine/outloud.css">
+</head>
+<body>
+<div id="deck">
+
+<!-- ═══ COVER ═══ -->
+<div class="slide cover" id="s1" data-label="Cover">
+  <div class="title-inner">
+    <div class="cover-brand">OUT <span>LOUD</span></div>
+    <div class="title-label">Conversational English</div>
+    <div class="title-sub">with teacher Nanda</div>
+    <h1 class="title-main">This Is <span class="title-accent">Me</span></h1>
+    <div class="title-meta">Level A1 · Say It · Mission 1 · Lesson 1</div>
+    <div class="cando-cover">
+      <div class="cc-l">By the end of today you can</div>
+      <div class="cc-t">Introduce yourself in English — your name, your country, your job, your city — and keep going for a full minute.</div>
+    </div>
+    <a class="cover-home" href="../index.html">🏠 All courses</a>
+    <button class="cover-hw-btn" data-goto-hw>📝 Homework</button>
+  </div>
+</div>
+
+<!-- ═══ HOOK 1 ═══ -->
+<div class="slide" id="s-hook" data-label="HOOK – Word Detective">
+  <div class="banner b-hook"><span class="bnum">BEAT 1 · HOOK</span> You already speak English</div>
+  <div class="slide-main"><div class="content">
+    <h2>Word Detective</h2>
+    <p class="instruction">Say each word out loud. Then click it — you will see it inside a real English sentence, and you can hear it.</p>
+    <p class="inst-light">You have never studied English. You already know all twelve of these words.</p>
+    <div data-ex="flip">
+      <div class="flipgrid">
+        <div class="flip" data-say-word="My hotel is near the airport."><span class="fw">hotel</span><span class="fb">My hotel is near the airport.</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="I take a taxi to work."><span class="fw">taxi</span><span class="fb">I take a taxi to work.</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="This restaurant is very good."><span class="fw">restaurant</span><span class="fb">This restaurant is very good.</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="I love dark chocolate."><span class="fw">chocolate</span><span class="fb">I love dark chocolate.</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="My sister is a doctor."><span class="fw">doctor</span><span class="fb">My sister is a doctor.</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="I listen to music every day."><span class="fw">music</span><span class="fb">I listen to music every day.</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="No problem!"><span class="fw">problem</span><span class="fb">No problem!</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="My family is very big."><span class="fw">family</span><span class="fb">My family is very big.</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="The internet is slow today."><span class="fw">internet</span><span class="fb">The internet is slow today.</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="This is very important."><span class="fw">important</span><span class="fb">This is very important.</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="Can I take a photo?"><span class="fw">photo</span><span class="fb">Can I take a photo?</span><span class="fh">click</span></div>
+        <div class="flip" data-say-word="I work for an international company."><span class="fw">international</span><span class="fb">I work for an international company.</span><span class="fh">click</span></div>
+      </div>
+      <div class="btnrow"><button class="btn btn-reset" data-reset>↺ Reset</button></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ HOOK 2 ═══ -->
+<div class="slide" id="s-hook2" data-label="HOOK – Beat the Clock">
+  <div class="banner b-hook"><span class="bnum">BEAT 1 · HOOK</span> Beat the Clock</div>
+  <div class="slide-main"><div class="content">
+    <h2>Sixty seconds. How many can you say?</h2>
+    <p class="instruction">Say English words you already know. Any word at all. Press the big button every time you say one.</p>
+    <p class="inst-light">Say it out loud — thinking it does not count. We do this again at the end of the mission.</p>
+    <div data-ex="btc" data-seconds="60">
+      <div class="btc">
+        <div class="btc-l">
+          <div class="btc-bar"><div class="btc-fill"></div></div>
+          <div class="btc-time">60</div>
+          <div class="btnrow" style="text-align:center">
+            <button class="btn btn-check" data-btc-start>▶ Start</button>
+            <button class="btn btn-reset" data-reset>↺ Reset</button>
+          </div>
+          <div class="btc-best"></div>
+        </div>
+        <div style="text-align:center">
+          <div class="btc-count">0</div>
+          <div class="btc-lab">Words said</div>
+          <div style="margin-top:14px"><button class="btc-tap" disabled>TAP</button></div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ INPUT 1 ═══ -->
+<div class="slide" id="s-input" data-label="INPUT – Four people">
+  <div class="banner b-input"><span class="bnum">BEAT 2 · INPUT</span> Four people, four countries</div>
+  <div class="slide-main"><div class="content">
+    <h2>Who is who?</h2>
+    <p class="instruction">Listen. Then click a person on the left and click their country on the right.</p>
+
+    <div class="audio-box"><audio controls src="AEF3e_Level_0_SB_1.02.mp3"></audio></div>
+    <div class="tnote"><b>Teacher setup:</b> copy <b>AEF3e_Level_0_SB_1.02.mp3</b> (Starter, track 1.2 — the coffee shop conversations) into this lesson folder. Until it is there, use the 🔊 buttons below, which speak in American English straight from the browser.</div>
+
+    <div data-ex="match">
+      <div class="cols2">
+        <div data-side="l">
+          <div class="mt-h">The people</div>
+          <div class="mt-item" data-k="0">1 · Marco</div>
+          <div class="mt-item" data-k="1">2 · Amara</div>
+          <div class="mt-item" data-k="2">3 · Yuki</div>
+          <div class="mt-item" data-k="3">4 · Sofia</div>
+        </div>
+        <div data-side="r">
+          <div class="mt-h">What they say</div>
+          <div class="mt-item" data-k="2"><span data-say="Hi. I'm Yuki. I'm from Japan. I'm a nurse.">🇯🇵 "Hi. I'm Yuki. I'm from Japan. I'm a nurse."</span></div>
+          <div class="mt-item" data-k="0"><span data-say="Hello. I'm Marco. I'm from Italy. I'm a chef.">🇮🇹 "Hello. I'm Marco. I'm from Italy. I'm a chef."</span></div>
+          <div class="mt-item" data-k="3"><span data-say="Hi. I'm Sofia. I'm from Mexico. I'm a student.">🇲🇽 "Hi. I'm Sofia. I'm from Mexico. I'm a student."</span></div>
+          <div class="mt-item" data-k="1"><span data-say="Hello. I'm Amara. I'm from Nigeria. I'm an engineer.">🇳🇬 "Hello. I'm Amara. I'm from Nigeria. I'm an engineer."</span></div>
+        </div>
+      </div>
+      <div class="btnrow">
+        <button class="btn btn-check" data-check>✓ Check Answers</button>
+        <button class="btn btn-reset" data-reset>↺ Reset</button>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ INPUT 2 ═══ -->
+<div class="slide" id="s-input2" data-label="INPUT – Notice the pattern">
+  <div class="banner b-input"><span class="bnum">BEAT 2 · INPUT</span> Notice the pattern</div>
+  <div class="slide-main"><div class="content">
+    <h2>Every single person said the same word</h2>
+    <p class="instruction">Look at the four sentences again. Which word is in every sentence?</p>
+    <div class="card" style="font-size:1.2rem;line-height:2.2">
+      I<b style="color:var(--c)">'m</b> Yuki. I<b style="color:var(--c)">'m</b> from Japan.<br>
+      I<b style="color:var(--c)">'m</b> Marco. I<b style="color:var(--c)">'m</b> from Italy.<br>
+      I<b style="color:var(--c)">'m</b> Sofia. I<b style="color:var(--c)">'m</b> from Mexico.<br>
+      I<b style="color:var(--c)">'m</b> Amara. I<b style="color:var(--c)">'m</b> from Nigeria.
+    </div>
+    <p class="inst-light">Nobody said "I <b>am</b> from Japan." Everybody said <span data-say="I'm">"I'm"</span> <i data-ipa="aɪm"></i>. That is how real people speak — and that is what we are learning today.</p>
+    <div class="ccq">
+      <div class="cl">💭 Tell me</div>
+      <ul>
+        <li>Is "I'm" one word or two words? <em>(two — I + am)</em></li>
+        <li>Which is faster to say: "I am" or "I'm"? <em>(I'm)</em></li>
+        <li>Which one do people use when they speak? <em>(I'm — almost always)</em></li>
+      </ul>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ BUILD Meaning ═══ -->
+<div class="slide" id="s-build-m" data-label="BUILD – Meaning">
+  <div class="banner b-build"><span class="bnum">BEAT 3 · BUILD</span> Meaning</div>
+  <div class="slide-main"><div class="content">
+    <h2>One tiny word does an enormous job</h2>
+    <p class="instruction">In English you cannot say "I teacher." You must say "I <b>am</b> a teacher."</p>
+    <div class="card">
+      <p style="font-size:1.24rem;line-height:2.2">
+        ❌ <span style="color:#C62828">I Brazilian.</span> &nbsp;→&nbsp; ✅ <span style="color:#1A7A4A;font-weight:800;background:#E3F5EA;padding:2px 8px;border-radius:5px" data-say="I'm Brazilian.">I'm Brazilian.</span><br>
+        ❌ <span style="color:#C62828">She doctor.</span> &nbsp;→&nbsp; ✅ <span style="color:#1A7A4A;font-weight:800;background:#E3F5EA;padding:2px 8px;border-radius:5px" data-say="She's a doctor.">She's a doctor.</span><br>
+        ❌ <span style="color:#C62828">We from Portugal.</span> &nbsp;→&nbsp; ✅ <span style="color:#1A7A4A;font-weight:800;background:#E3F5EA;padding:2px 8px;border-radius:5px" data-say="We're from Portugal.">We're from Portugal.</span>
+      </p>
+    </div>
+    <div class="ccq">
+      <div class="cl">💭 Check your understanding</div>
+      <ul>
+        <li>In "I'm a teacher" — am I talking about now, or about yesterday? <em>(now)</em></li>
+        <li>Can I say "I teacher" in English? <em>(no — never)</em></li>
+        <li>Do I need this little word in every sentence? <em>(yes, when there is no other verb)</em></li>
+      </ul>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ BUILD Form ═══ -->
+<div class="slide" id="s-build-f" data-label="BUILD – Form">
+  <div class="banner b-build"><span class="bnum">BEAT 3 · BUILD</span> Form</div>
+  <div class="slide-main"><div class="content">
+    <h2>All six, in one picture</h2>
+    <div class="formula"><span>I / you / he / she / we / they</span> + <span>am / are / is</span> + <span>the rest</span></div>
+    <div class="fgrid">
+      <div class="fcell"><b>I am</b><span class="ctr">→ I'm</span></div>
+      <div class="fcell"><b>you are</b><span class="ctr">→ you're</span></div>
+      <div class="fcell"><b>he is</b><span class="ctr">→ he's</span></div>
+      <div class="fcell"><b>she is</b><span class="ctr">→ she's</span></div>
+      <div class="fcell"><b>we are</b><span class="ctr">→ we're</span></div>
+      <div class="fcell"><b>they are</b><span class="ctr">→ they're</span></div>
+    </div>
+    <p class="inst-light">Three words do all the work: <b>am</b> (only with I), <b>is</b> (he, she, it), <b>are</b> (you, we, they). That is the whole rule.</p>
+    <div class="card tint">
+      <p class="instruction" style="margin-bottom:6px">To ask a question, swap the first two words:</p>
+      <p style="font-size:1.14rem;line-height:2">
+        You are from Brazil. → <b style="color:#4A1A6A" data-say="Are you from Brazil?">Are you</b> from Brazil?<br>
+        She is a doctor. → <b style="color:#4A1A6A" data-say="Is she a doctor?">Is she</b> a doctor?
+      </p>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ BUILD Pronunciation ═══ -->
+<div class="slide" id="s-build-p" data-label="BUILD – Pronunciation (IPA)">
+  <div class="banner b-build"><span class="bnum">BEAT 3 · BUILD</span> Pronunciation</div>
+  <div class="slide-main"><div class="content">
+    <h2>Say the short one. Always.</h2>
+    <p class="instruction">Click 🔊 and repeat. The long form is correct — but it is not what people say.</p>
+    <div class="cols3">
+      <div class="wordcard"><div class="w" data-say="I'm">I'm</div><div class="p"><i data-ipa="aɪm"></i></div></div>
+      <div class="wordcard"><div class="w" data-say="you're">you're</div><div class="p"><i data-ipa="jʊr"></i></div></div>
+      <div class="wordcard"><div class="w" data-say="he's">he's</div><div class="p"><i data-ipa="hiz"></i></div></div>
+      <div class="wordcard"><div class="w" data-say="she's">she's</div><div class="p"><i data-ipa="ʃiz"></i></div></div>
+      <div class="wordcard"><div class="w" data-say="we're">we're</div><div class="p"><i data-ipa="wɪr"></i></div></div>
+      <div class="wordcard"><div class="w" data-say="they're">they're</div><div class="p"><i data-ipa="ðɛr"></i></div></div>
+      <div class="wordcard"><div class="w" data-say="it's">it's</div><div class="p"><i data-ipa="ɪts"></i></div></div>
+      <div class="wordcard"><div class="w" data-say="that's">that's</div><div class="p"><i data-ipa="ðæts"></i></div></div>
+      <div class="wordcard"><div class="w" data-say="what's">what's</div><div class="p"><i data-ipa="wʌts"></i></div></div>
+    </div>
+
+    <h2 style="margin-top:26px;font-size:1.4rem">Three sounds to start with</h2>
+    <p class="inst-light">American English File teaches sounds with pictures. These are your first three.</p>
+    <div class="cols3">
+      <div class="wordcard"><div class="w" data-say="house">house</div><div class="p"><i data-ipa="haʊs"></i></div><div style="font-size:1.06rem;color:#8A7A6A;margin-top:6px">the sound <b>/h/</b> — push air out</div></div>
+      <div class="wordcard"><div class="w" data-say="bike">bike</div><div class="p"><i data-ipa="baɪk"></i></div><div style="font-size:1.06rem;color:#8A7A6A;margin-top:6px">the sound <b>/aɪ/</b> — as in "I'm"</div></div>
+      <div class="wordcard"><div class="w" data-say="tree">tree</div><div class="p"><i data-ipa="tri"></i></div><div style="font-size:1.06rem;color:#8A7A6A;margin-top:6px">the sound <b>/i/</b> — as in "he's"</div></div>
+    </div>
+    <div class="tnote"><b>Teacher setup:</b> optional — copy <b>AEF3e_Level_0_SB_1.11.mp3</b> and <b>AEF3e_Level_0_SB_1.12.mp3</b> (Starter 1A, the /h/ /aɪ/ /i/ sound work) into this folder if you want the book audio as well.</div>
+
+    <div class="card tint">
+      <p class="instruction" style="margin-bottom:4px">🎯 Say this five times, faster each time:</p>
+      <p style="font-size:1.36rem;font-weight:800;color:var(--c)" data-say="I'm Nanda, I'm from Brazil, and I'm a teacher." data-say-big>"I'm Nanda, I'm from Brazil, and I'm a teacher."</p>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ BUILD Practice ═══ -->
+<div class="slide" id="s-build-prac" data-label="BUILD – Practice">
+  <div class="banner b-build"><span class="bnum">BEAT 3 · BUILD</span> Practice</div>
+  <div class="slide-main"><div class="content">
+    <h2>Fill the gap</h2>
+    <p class="instruction">Write <b>am</b>, <b>is</b> or <b>are</b>. Say the whole sentence out loud before you type it.</p>
+    <div data-ex="gap">
+      <div class="cols2">
+        <div>
+          <p style="font-size:1.08rem;line-height:2.6">1 &nbsp; I <input class="gap" style="width:110px" data-ans="am"> from Brazil.</p>
+          <p style="font-size:1.08rem;line-height:2.6">2 &nbsp; She <input class="gap" style="width:110px" data-ans="is"> a doctor.</p>
+          <p style="font-size:1.08rem;line-height:2.6">3 &nbsp; They <input class="gap" style="width:110px" data-ans="are"> my parents.</p>
+          <p style="font-size:1.08rem;line-height:2.6">4 &nbsp; You <input class="gap" style="width:110px" data-ans="are"> a good student.</p>
+        </div>
+        <div>
+          <p style="font-size:1.08rem;line-height:2.6">5 &nbsp; We <input class="gap" style="width:110px" data-ans="are"> in the same class.</p>
+          <p style="font-size:1.08rem;line-height:2.6">6 &nbsp; It <input class="gap" style="width:110px" data-ans="is"> a beautiful city.</p>
+          <p style="font-size:1.08rem;line-height:2.6">7 &nbsp; <input class="gap" style="width:110px" data-ans="are"> you an engineer?</p>
+          <p style="font-size:1.08rem;line-height:2.6">8 &nbsp; My name <input class="gap" style="width:110px" data-ans="is"> Marco.</p>
+        </div>
+      </div>
+      <div class="btnrow">
+        <button class="btn btn-check" data-check>✓ Check Answers</button>
+        <button class="btn btn-reset" data-reset>↺ Reset</button>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ BUILD Surgery ═══ -->
+<div class="slide" id="s-build-surg" data-label="BUILD – Sentence Surgery">
+  <div class="banner b-build"><span class="bnum">BEAT 3 · BUILD</span> Sentence Surgery</div>
+  <div class="slide-main"><div class="content">
+    <h2>🩺 These sentences are sick. Operate.</h2>
+    <p class="instruction">Click the word that is wrong. Then choose the cure.</p>
+    <div data-ex="surgery">
+      <div class="surg" data-say-full="I am a teacher in Lisbon.">
+        <div class="surg-s"><span class="sw">I</span><span class="sw" data-bad>teacher</span><span class="sw">in</span><span class="sw">Lisbon.</span></div>
+        <div class="cures"><span class="cure" data-ok>am a teacher</span><span class="cure">teachers</span><span class="cure">is teacher</span></div>
+      </div>
+      <div class="surg" data-say-full="She is my sister.">
+        <div class="surg-s"><span class="sw">She</span><span class="sw" data-bad>are</span><span class="sw">my</span><span class="sw">sister.</span></div>
+        <div class="cures"><span class="cure" data-ok>is</span><span class="cure">am</span><span class="cure">be</span></div>
+      </div>
+      <div class="surg" data-say-full="They are from Japan.">
+        <div class="surg-s"><span class="sw">They</span><span class="sw" data-bad>is</span><span class="sw">from</span><span class="sw">Japan.</span></div>
+        <div class="cures"><span class="cure" data-ok>are</span><span class="cure">am</span><span class="cure">be</span></div>
+      </div>
+      <div class="surg" data-say-full="Are you a doctor?">
+        <div class="surg-s"><span class="sw" data-bad>Is</span><span class="sw">you</span><span class="sw">a</span><span class="sw">doctor?</span></div>
+        <div class="cures"><span class="cure" data-ok>Are</span><span class="cure">Am</span><span class="cure">Be</span></div>
+      </div>
+      <div class="vitals"><div class="vitals-f"></div></div>
+      <div class="btnrow"><button class="btn btn-reset" data-reset>↺ Reset</button></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ PLAY Escalator ═══ -->
+<div class="slide" id="s-play" data-label="PLAY – The Escalator">
+  <div class="banner b-play"><span class="bnum">BEAT 4 · PLAY</span> The Escalator</div>
+  <div class="slide-main"><div class="content">
+    <h2>🪜 Start with two words. Finish with fifteen.</h2>
+    <p class="instruction">Say the sentence out loud first, then write it. Every step you add one new piece — and you never delete anything.</p>
+    <div data-ex="escalator">
+      <div class="esc-step"><div class="esc-n">1</div><div class="esc-b">
+        <div class="esc-ask">Your name</div><div class="esc-eg">I'm Nanda.</div><input class="esc-in"></div></div>
+      <div class="esc-step"><div class="esc-n">2</div><div class="esc-b">
+        <div class="esc-ask">+ your country</div><div class="esc-eg">I'm Nanda and I'm from Brazil.</div><input class="esc-in"></div></div>
+      <div class="esc-step"><div class="esc-n">3</div><div class="esc-b">
+        <div class="esc-ask">+ your job</div><div class="esc-eg">I'm Nanda, I'm from Brazil, and I'm an English teacher.</div><input class="esc-in"></div></div>
+      <div class="esc-step"><div class="esc-n">4</div><div class="esc-b">
+        <div class="esc-ask">+ where you live now</div><div class="esc-eg">…and I live in Lisbon.</div><input class="esc-in"></div></div>
+      <div class="esc-step"><div class="esc-n">5</div><div class="esc-b">
+        <div class="esc-ask">+ one thing you love</div><div class="esc-eg">…and I love coffee and old movies.</div><input class="esc-in"></div></div>
+      <div class="esc-meter">
+        <div><span class="em-l">Words in your sentence now</span><b data-esc-words>0</b></div>
+        <div><span class="em-l">Step 1 had</span><b data-esc-start>0</b></div>
+        <div><span class="em-l">You grew it by</span><b data-esc-grow>0×</b></div>
+        <button class="btn btn-check" data-esc-next>↓ Next step</button>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ PLAY Two Truths ═══ -->
+<div class="slide" id="s-play2" data-label="PLAY – Two Truths and a Lie">
+  <div class="banner b-play"><span class="bnum">BEAT 4 · PLAY</span> Two Truths and a Lie</div>
+  <div class="slide-main"><div class="content">
+    <h2>🔀 Two of these are true. One is not.</h2>
+    <p class="instruction">Write three sentences about yourself: two true, one false. Every sentence starts with <b>I'm</b>. I have to guess the lie.</p>
+    <div data-ex="ttl">
+      <div class="card">
+        <p style="line-height:2.4;font-size:1.06rem">
+          <b style="color:#2A8C5A">A</b> &nbsp; <input class="line" style="width:calc(100% - 44px)"><br>
+          <b style="color:#2A8C5A">B</b> &nbsp; <input class="line" style="width:calc(100% - 44px)"><br>
+          <b style="color:#2A8C5A">C</b> &nbsp; <input class="line" style="width:calc(100% - 44px)">
+        </p>
+      </div>
+      <p class="inst-light">💡 Ideas: I'm from… · I'm a… · I'm 30 years old · I'm married · I'm very good at… · I'm afraid of…</p>
+      <div class="card tint">
+        <p class="instruction" style="margin-bottom:6px">Now my turn — and you ask me questions:</p>
+        <p style="font-size:1.06rem;line-height:1.9">
+          A · <span data-say="I'm from São Paulo.">I'm from Sao Paulo.</span> &nbsp; B · <span data-say="I'm a Cambridge CELTA teacher.">I'm a Cambridge CELTA teacher.</span> &nbsp; C · <span data-say="I'm fluent in seven languages.">I'm fluent in seven languages.</span>
+        </p>
+        <div class="btnrow"><button class="btn btn-key" data-key>🔑 Show Answer Key</button></div>
+        <div class="key"><b>C is the lie</b> — I speak five languages, not seven. Now ask me: "Are you from Sao Paulo?" · "Are you a teacher?"</div>
+      </div>
+      <div class="btnrow"><button class="btn btn-reset" data-reset>↺ Reset</button></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ LAND ═══ -->
+<div class="slide" id="s-land" data-label="LAND – Fluency Log">
+  <div class="banner b-land"><span class="bnum">BEAT 5 · LAND</span> Your Fluency Log</div>
+  <div class="slide-main"><div class="content">
+    <div class="cando">
+      <div class="cs-l">✅ Unlocked today</div>
+      <div class="cs-t">I can introduce myself in English — my name, my country, my job and my city — and keep going for a full minute.</div>
+    </div>
+    <p class="instruction">Record sixty seconds. Say everything you can about yourself. Do not stop, do not correct yourself, do not worry about mistakes.</p>
+    <p class="inst-light">We keep this recording. In thirty lessons we play it again — and you will not believe it is you.</p>
+    <div data-ex="recorder" data-max="90">
+      <div class="rec">
+        <div><span class="rec-dot"></span><span class="rec-t">0:00</span></div>
+        <div style="margin-top:10px">
+          <button class="btn-rec" data-rec-start>● Start recording</button>
+          <button class="btn-rec stop" data-rec-stop disabled>■ Stop</button>
+        </div>
+        <div class="rec-play"><audio controls></audio></div>
+        <p class="rec-note">Recording happens inside your browser. Nothing is uploaded anywhere.</p>
+      </div>
+    </div>
+    <div class="tnote"><b>Teacher setup:</b> after the lesson, right-click the player → <b>Save audio as…</b> and save it as <b>lesson-01.webm</b> in this student's Fluency Log folder.</div>
+  </div></div>
+</div>
+
+<!-- ═══ HOMEWORK COVER ═══ -->
+<div class="slide cover hw" id="hw-cover" data-label="Homework Cover">
+  <div class="title-inner">
+    <div class="title-label">This Is Me</div>
+    <h1 class="title-main">Home<span class="title-accent">work</span></h1>
+    <div class="title-sub">Five minutes a day. Not forty minutes on Sunday.</div>
+  </div>
+</div>
+
+<!-- ═══ HW1 ═══ -->
+<div class="slide" id="hw-streak" data-label="HW1 – 7-Day Streak">
+  <div class="banner b-hw"><span class="bnum">HW1</span> The 7-Day Streak Card</div>
+  <div class="slide-main"><div class="content">
+    <h2>Seven days. Five minutes each.</h2>
+    <p class="instruction">Click a day when you finish it. Bring this back next lesson.</p>
+    <div data-ex="streak">
+      <div class="streak">
+        <div class="day"><div class="day-n">Mon</div><div class="day-t">Say "I'm ___" about yourself <b>ten times</b>, out loud, in the mirror.</div><div class="day-x">✅</div></div>
+        <div class="day"><div class="day-n">Tue</div><div class="day-t">Write <b>five</b> sentences about your family: He's… She's… They're…</div><div class="day-x">✅</div></div>
+        <div class="day"><div class="day-n">Wed</div><div class="day-t">Find <b>ten English words</b> in your home. Photograph them.</div><div class="day-x">✅</div></div>
+        <div class="day"><div class="day-n">Thu</div><div class="day-t">Listen to <b>What a Wonderful World</b>. Count the words you understand.</div><div class="day-x">✅</div></div>
+        <div class="day"><div class="day-n">Fri</div><div class="day-t">Ask a friend <b>three questions</b> in English: Are you…? Is he…?</div><div class="day-x">✅</div></div>
+        <div class="day"><div class="day-n">Sat</div><div class="day-t">Do the <b>AI Partner Card</b> on the next page. Ten minutes.</div><div class="day-x">✅</div></div>
+        <div class="day"><div class="day-n">Sun</div><div class="day-t">Record your <b>60-second voice note</b> and send it to me.</div><div class="day-x">✅</div></div>
+      </div>
+      <div class="btnrow"><button class="btn btn-reset" data-reset>↺ Reset</button></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ HW2 ═══ -->
+<div class="slide" id="hw-gap" data-label="HW2 – Short forms">
+  <div class="banner b-hw"><span class="bnum">HW2</span> Short forms</div>
+  <div class="slide-main"><div class="content">
+    <h2>Complete the sentences</h2>
+    <p class="instruction">Write the short form: <b>I'm</b>, <b>you're</b>, <b>he's</b>, <b>she's</b>, <b>it's</b>, <b>we're</b> or <b>they're</b>.</p>
+    <div data-ex="gap">
+      <div class="cols2">
+        <div>
+          <p style="font-size:1.06rem;line-height:2.7">1 &nbsp; <span style="background:#E3F5EA;color:#1A7A4A;font-weight:800;padding:1px 7px;border-radius:5px">I'm</span> from Portugal. <em style="color:#8A7A6A;font-size:1.06rem">(I am)</em></p>
+          <p style="font-size:1.06rem;line-height:2.7">2 &nbsp; <input class="gap" style="width:130px" data-ans="she's" data-alt="she is"> a nurse. <em style="color:#8A7A6A;font-size:1.06rem">(she is)</em></p>
+          <p style="font-size:1.06rem;line-height:2.7">3 &nbsp; <input class="gap" style="width:130px" data-ans="they're" data-alt="they are"> my friends. <em style="color:#8A7A6A;font-size:1.06rem">(they are)</em></p>
+          <p style="font-size:1.06rem;line-height:2.7">4 &nbsp; <input class="gap" style="width:130px" data-ans="it's" data-alt="it is"> very cold today. <em style="color:#8A7A6A;font-size:1.06rem">(it is)</em></p>
+        </div>
+        <div>
+          <p style="font-size:1.06rem;line-height:2.7">5 &nbsp; <input class="gap" style="width:130px" data-ans="he's" data-alt="he is"> an engineer. <em style="color:#8A7A6A;font-size:1.06rem">(he is)</em></p>
+          <p style="font-size:1.06rem;line-height:2.7">6 &nbsp; <input class="gap" style="width:130px" data-ans="we're" data-alt="we are"> in the same class. <em style="color:#8A7A6A;font-size:1.06rem">(we are)</em></p>
+          <p style="font-size:1.06rem;line-height:2.7">7 &nbsp; <input class="gap" style="width:130px" data-ans="you're" data-alt="you are"> a very good student. <em style="color:#8A7A6A;font-size:1.06rem">(you are)</em></p>
+          <p style="font-size:1.06rem;line-height:2.7">8 &nbsp; <input class="gap" style="width:130px" data-ans="i'm" data-alt="i am"> tired. <em style="color:#8A7A6A;font-size:1.06rem">(I am)</em></p>
+        </div>
+      </div>
+      <div class="btnrow">
+        <button class="btn btn-check" data-check>✓ Check Answers</button>
+        <button class="btn btn-reset" data-reset>↺ Reset</button>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══ HW3 ═══ -->
+<div class="slide" id="hw-ai" data-label="HW3 – AI Partner Card">
+  <div class="banner b-hw"><span class="bnum">HW3</span> Your AI Partner Card</div>
+  <div class="slide-main"><div class="content">
+    <h2>🤖 Ten minutes with a partner who never gets tired</h2>
+    <p class="instruction">Open ChatGPT, Claude or Gemini. Copy this in exactly. Answer out loud <em>and</em> in writing.</p>
+    <div class="aicard" id="ai1">You are my English conversation partner. My level is A1 — I am a beginner.
+
+Ask me 12 questions, ONE AT A TIME, and wait for my answer each time.
+Every question must be answerable with "I'm…", "He's…", "She's…",
+"They're…" or "It's…". Topic: me, my family, my job and my city.
+
+Use only very simple English. Keep your questions under 8 words.
+
+After each answer: if I used am/is/are incorrectly, show me the corrected
+sentence in bold, then move on. Ignore every other kind of mistake.
+Do not explain grammar unless I ask you to.
+
+Start with question 1 now.</div>
+    <button class="btn-copy" data-copy="ai1">📋 Copy the prompt</button>
+    <p class="inst-light" style="margin-top:14px">Then screenshot <b>one answer you are proud of</b> and <b>one that was hard</b>. Bring both.</p>
+  </div></div>
+</div>
+
+<!-- ═══ HW4 ═══ -->
+<div class="slide" id="hw-voice" data-label="HW4 – Voice Note">
+  <div class="banner b-hw"><span class="bnum">HW4</span> The Voice Note</div>
+  <div class="slide-main"><div class="content">
+    <h2>🎤 Sixty seconds. Send it to me.</h2>
+    <p class="instruction">Before our next lesson, record yourself answering this — and do not write a script first.</p>
+    <div class="card tint">
+      <p style="font-size:1.34rem;font-weight:800;color:var(--c);line-height:1.6" data-say="Hello Nanda. I'm... I'm from... I'm a... I live in... And I love...">"Hello Nanda. I'm ___. I'm from ___. I'm a ___. I live in ___. And I love ___."</p>
+      <p class="inst-light" style="margin-top:12px;margin-bottom:0">Then keep going for as long as you can. Say anything. Repeat yourself if you need to. <b>Sixty seconds — that is the only rule.</b></p>
+    </div>
+    <div class="card">
+      <p class="instruction" style="margin-bottom:8px">✍️ Optional — plan it here, then close the screen and speak without looking:</p>
+      <textarea class="bigbox" style="min-height:110px"></textarea>
+    </div>
+    <p class="inst-light">I will send you a voice note back. Not a correction — just a reply. 🎧</p>
+  </div></div>
+</div>
+
+</div><!-- /deck -->
+
+<script src="../engine/outloud.js"></script>
+<script>
+OUTLOUD.init({
+  level: 'a1',
+  code: 'A1 · Mission 1 · Lesson 1',
+  title: 'This Is Me',
+  url: 'https://teacher-nanda.github.io/OUT-LOUD/A1-M1-L1/index.html'
+});
+</script>
+</body>
+</html>

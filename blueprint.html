@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OUT LOUD — Course Blueprint · Teacher Nanda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#FAFAF8;color:#1C2B3A;line-height:1.6}
+
+/* ── Top nav ── */
+#topnav{position:sticky;top:0;z-index:900;background:rgba(10,22,40,.97);backdrop-filter:blur(8px);display:flex;align-items:center;gap:4px;padding:0 18px;height:56px;overflow-x:auto;box-shadow:0 2px 14px rgba(0,0,0,.25)}
+#topnav .brand{color:#fff;font-weight:900;letter-spacing:.14em;font-size:.9rem;margin-right:16px;white-space:nowrap}
+#topnav .brand span{color:#4FC3F7}
+#topnav a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.83rem;font-weight:600;padding:7px 12px;border-radius:16px;white-space:nowrap;transition:background .18s,color .18s}
+#topnav a:hover{background:rgba(255,255,255,.14);color:#fff}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(160deg,#0A1628 0%,#1A3A6B 45%,#0E5A8A 100%);color:#fff;padding:78px 32px 68px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 78% 22%,rgba(79,195,247,.16) 0%,transparent 58%)}
+.hero>*{position:relative;z-index:2}
+.hero .kicker{font-size:.92rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600}
+.hero h1{font-size:4.4rem;font-weight:900;letter-spacing:-.02em;line-height:1;margin:16px 0 6px}
+.hero h1 em{font-style:normal;color:#4FC3F7}
+.hero .tag{font-size:1.35rem;color:rgba(255,255,255,.86);font-weight:400;max-width:640px;margin:10px auto 0}
+.hero .sub{font-size:1rem;color:rgba(255,255,255,.55);margin-top:22px}
+.hero-stats{display:flex;justify-content:center;gap:44px;margin-top:38px;flex-wrap:wrap}
+.hero-stat b{display:block;font-size:2.1rem;font-weight:900;color:#4FC3F7;line-height:1}
+.hero-stat span{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* ── Layout ── */
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+section{padding:64px 0;border-bottom:1px solid #E4E9EF}
+section:last-of-type{border-bottom:none}
+.sec-label{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#0E7A8A;margin-bottom:10px}
+h2.sec-title{font-size:2.5rem;font-weight:900;color:#0A2836;line-height:1.12;margin-bottom:14px;letter-spacing:-.015em}
+.lede{font-size:1.16rem;color:#3E5468;max-width:760px;margin-bottom:34px}
+h3{font-size:1.4rem;font-weight:800;color:#0A2836;margin:34px 0 12px}
+h4{font-size:1.05rem;font-weight:800;color:#1C2B3A;margin:20px 0 8px}
+p{margin-bottom:12px}
+ul,ol{margin:0 0 14px 22px}
+li{margin-bottom:6px}
+strong{font-weight:700;color:#0A2836}
+em.hand{font-family:'Caveat',cursive;font-size:1.5rem;color:#0E7A8A;font-style:normal}
+
+/* ── Cards & boxes ── */
+.card{background:#fff;border:1px solid #E4E9EF;border-radius:14px;padding:24px 26px;margin-bottom:18px;box-shadow:0 1px 3px rgba(10,40,54,.05)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:880px){.grid2,.grid3{grid-template-columns:1fr}}
+.callout{border-left:5px solid #E85D2A;background:#FFF6F1;padding:18px 22px;border-radius:0 10px 10px 0;margin:22px 0}
+.callout.blue{border-color:#0E7A8A;background:#EEF8FA}
+.callout.green{border-color:#2A8C5A;background:#EFF8F2}
+.callout .ct{font-weight:800;color:#0A2836;margin-bottom:5px;display:block}
+.pill{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:12px;background:#E9EEF4;color:#3E5468;margin-right:6px}
+
+/* ── Level colors ── */
+.lv-a1{--c:#E85D2A;--cl:#FFF1EA}
+.lv-a2{--c:#2A8C5A;--cl:#EDF8F1}
+.lv-b1{--c:#0E7A8A;--cl:#EAF6F8}
+.lv-b2{--c:#1E4D8C;--cl:#EDF2FA}
+.lv-c1{--c:#5B2D8B;--cl:#F4EEFA}
+
+/* ── Level block ── */
+.level{border:1px solid #E4E9EF;border-radius:18px;overflow:hidden;margin-bottom:34px;background:#fff;box-shadow:0 2px 12px rgba(10,40,54,.06)}
+.level-head{background:var(--c);color:#fff;padding:26px 30px}
+.level-head .lh-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.level-head .lh-code{font-size:.8rem;font-weight:800;letter-spacing:.2em;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:12px}
+.level-head h3{font-size:2.15rem;font-weight:900;color:#fff;margin:8px 0 4px;letter-spacing:-.01em}
+.level-head .lh-tag{font-size:1.08rem;color:rgba(255,255,255,.88)}
+.level-head .lh-meta{margin-top:14px;font-size:.85rem;color:rgba(255,255,255,.78);display:flex;gap:24px;flex-wrap:wrap}
+.level-body{padding:26px 30px}
+.promise{background:var(--cl);border-radius:12px;padding:18px 22px;margin-bottom:22px}
+.promise .pl{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--c);margin-bottom:8px}
+.promise ul{margin-left:20px;margin-bottom:0}
+
+/* ── Mission table ── */
+table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:.92rem}
+th{background:#0A2836;color:#fff;text-align:left;padding:10px 13px;font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;font-weight:800}
+td{padding:11px 13px;border-bottom:1px solid #EDF1F5;vertical-align:top}
+tr:nth-child(even) td{background:#FAFBFC}
+td.mno{font-weight:900;color:var(--c);white-space:nowrap;font-size:1.05rem}
+td.mname{font-weight:800;color:#0A2836}
+.tiny{font-size:.84rem;color:#5A7186}
+
+/* ── Activity bank ── */
+.act{border:1px solid #E4E9EF;border-radius:12px;padding:18px 20px;background:#fff;position:relative}
+.act .an{font-weight:800;color:#0A2836;font-size:1.02rem;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.act .ad{font-size:.9rem;color:#3E5468;margin-bottom:10px}
+.act .am{font-size:.8rem;color:#5A7186;border-top:1px dashed #DDE4EB;padding-top:8px}
+.act .am b{color:#0E7A8A}
+
+/* ── Prompt block ── */
+.prompt{background:#0F1E2E;color:#D8E4EE;border-radius:12px;padding:18px 22px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:.85rem;line-height:1.65;margin:10px 0 20px;white-space:pre-wrap;overflow-x:auto}
+.prompt .ph{color:#4FC3F7;font-weight:700}
+.pname{font-weight:800;color:#0A2836;font-size:1.05rem;margin-top:22px}
+.pwhen{font-size:.86rem;color:#5A7186;margin-bottom:6px}
+
+/* ── Media table ── */
+.media td:first-child{font-weight:700;white-space:nowrap;color:#0A2836}
+.why{font-size:.86rem;color:#5A7186;font-style:italic}
+
+/* ── Beat strip ── */
+.beats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:26px 0}
+@media(max-width:880px){.beats{grid-template-columns:1fr}}
+.beat{border-radius:12px;padding:18px 16px;color:#fff}
+.beat b{display:block;font-size:1.2rem;font-weight:900;letter-spacing:.04em;margin-bottom:2px}
+.beat .bt{font-size:.74rem;opacity:.75;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;display:block}
+.beat p{font-size:.85rem;line-height:1.45;margin:0;opacity:.94}
+.b1{background:#D35400}.b2{background:#0E7A8A}.b3{background:#4A1A6A}.b4{background:#2A8C5A}.b5{background:#1E4D8C}
+
+footer{background:#0A1628;color:rgba(255,255,255,.6);text-align:center;padding:44px 32px;font-size:.88rem}
+footer b{color:#4FC3F7}
+</style>
+</head>
+<body>
+
+<nav id="topnav">
+  <div class="brand">OUT <span>LOUD</span></div>
+  <a href="#why">The problem</a>
+  <a href="#shape">Lesson shape</a>
+  <a href="#path">The 5 levels</a>
+  <a href="#a1">A1</a><a href="#a2">A2</a><a href="#b1">B1</a><a href="#b2">B2</a><a href="#c1">C1</a>
+  <a href="#activities">Activity bank</a>
+  <a href="#media">Media bank</a>
+  <a href="#ai">AI partner</a>
+  <a href="#homework">Homework</a>
+  <a href="#assess">Proof &amp; progress</a>
+  <a href="#build">Build order</a>
+</nav>
+
+<header class="hero">
+  <div class="kicker">A complete course design for</div>
+  <h1>OUT <em>LOUD</em></h1>
+  <p class="tag">English that leaves your head.</p>
+  <p class="sub">Five levels · A1 → C1 · 150 lessons · designed for one-on-one, 50 minutes</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><b>5</b><span>Levels</span></div>
+    <div class="hero-stat"><b>30</b><span>Missions</span></div>
+    <div class="hero-stat"><b>150</b><span>Lessons</span></div>
+    <div class="hero-stat"><b>30</b><span>Projects</span></div>
+    <div class="hero-stat"><b>24</b><span>Activity types</span></div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════ WHY ══════════════════════════════ -->
+<section id="why"><div class="wrap">
+  <div class="sec-label">Start here</div>
+  <h2 class="sec-title">The diagnosis: it isn't your teaching.<br>It's who's choosing the topic.</h2>
+  <p class="lede">Your production quality is already high — the standards file is more rigorous than most publishers'. The problem is structural, and it's worth naming precisely before fixing it.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>What the trial lesson promises</h4>
+      <p>Six months from now: series without subtitles. Speaking up in a meeting without rehearsing. Telling your story and getting the job. Handling any airport. <strong>A transformation, with a destination.</strong></p>
+      <p>It also names the student's real pain: <em>"I understand English, but the words don't come out."</em></p>
+    </div>
+    <div class="card">
+      <h4>What the AEF-built lesson delivers</h4>
+      <p>"Fasten your seat belts." Airport announcements. Match the word to the definition. Beautifully built — but the <strong>book</strong> picked the topic, so the lesson can only ever be as interesting as the unit it came from.</p>
+      <p>And crucially: nothing in it points at the six-month destination.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="ct">The gap, in one sentence</span>
+    You sell a <strong>destination</strong> and deliver a <strong>syllabus</strong>. Students feel the difference even when they can't articulate it — and it shows up as churn around lesson 8, when novelty fades and progress isn't visible yet.
+  </div>
+
+  <h3>The three fixes this blueprint makes</h3>
+  <div class="grid3">
+    <div class="card">
+      <h4>1 · Invert the hierarchy</h4>
+      <p class="tiny">The <strong>can-do goal</strong> picks the topic. Grammar rides underneath as a hidden spine. AEF becomes your private coverage checklist — never something the student sees.</p>
+    </div>
+    <div class="card">
+      <h4>2 · Make progress audible</h4>
+      <p class="tiny">Every lesson ends with a 60-second recording. At level end, you play lesson 1 next to lesson 30. Nothing else you can do sells a renewal as hard as a student hearing their own progress.</p>
+    </div>
+    <div class="card">
+      <h4>3 · Replace exercises with mechanics</h4>
+      <p class="tiny">Gap-fills check knowledge. <strong>Games force production under mild pressure</strong> — which is exactly the muscle "the words don't come out" is missing. 24 new mechanics are specced below.</p>
+    </div>
+  </div>
+
+  <div class="callout blue">
+    <span class="ct">On the AEF books</span>
+    You keep them — privately. Every level below lists its <strong>grammar spine</strong>, sequenced to match AEF's CEFR progression so no structure is skipped and a student transferring in or out lands cleanly. The books stay on your shelf as an audit tool. They never appear in a slide, a homework, or a student's mouth.
+  </div>
+</div></section>
+
+<!-- ══════════════════════════════ LESSON SHAPE ══════════════════════════════ -->
+<section id="shape"><div class="wrap">
+  <div class="sec-label">The signature</div>
+  <h2 class="sec-title">The 5-Beat Lesson</h2>
+  <p class="lede">One repeatable 50-minute rhythm, used at every level from A1 to C1. Students learn the shape by lesson three and start arriving prepared for it. It also makes lessons dramatically faster for you to build — you're filling a known skeleton, not inventing a structure each time.</p>
+
+  <div class="beats">
+    <div class="beat b1"><span class="bt">0–5 min</span><b>HOOK</b><p>A game, a puzzle, a surprising fact. Never a quote. Secretly contains today's target language <em>before</em> it's taught.</p></div>
+    <div class="beat b2"><span class="bt">5–15 min</span><b>INPUT</b><p>Real English: a song, a scene, a short video, a story. Something a native actually made — not a textbook text.</p></div>
+    <div class="beat b3"><span class="bt">15–30 min</span><b>BUILD</b><p>Meaning → Form → Pronunciation, then controlled practice. Your existing CELTA sequence, unchanged.</p></div>
+    <div class="beat b4"><span class="bt">30–45 min</span><b>PLAY</b><p>The game beat. A mechanic from the bank that forces the target language out of the student's mouth under mild pressure.</p></div>
+    <div class="beat b5"><span class="bt">45–50 min</span><b>LAND</b><p>"You can now do X." Student records 60 seconds using today's language about their own life. Homework launched.</p></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>Why HOOK comes before INPUT</h4>
+      <p class="tiny">Your standards already say a warm-up should make the student use the target language before it's taught. The 5-Beat locks that in as structure rather than aspiration. By the time you name the grammar in BUILD, the student has already met it twice — once in play, once in real English. Naming it becomes a relief ("oh, <em>that's</em> what that was"), not an imposition.</p>
+    </div>
+    <div class="card">
+      <h4>Why LAND is non-negotiable</h4>
+      <p class="tiny">Five minutes, every lesson: state the can-do that was just unlocked, and capture a 60-second recording. This is what converts a nice lesson into visible progress. It also gives you a corpus of the student's own English to build later lessons from — the single richest source of personalised material you'll ever have.</p>
+    </div>
+  </div>
+
+  <div class="callout green">
+    <span class="ct">Mission Complete lessons run a different shape</span>
+    Every fifth lesson replaces the 5 beats with: <strong>Warm-up (5) → Project presentation &amp; feedback (20) → Can-Do Check (15) → Next mission trailer (10)</strong>. It's a breather, a celebration, and an assessment in one — and it's where renewals get decided.
+  </div>
+
+  <h3>Structure of a level</h3>
+  <table>
+    <tr><th>Unit</th><th>Contains</th><th>Time at 1×/week</th></tr>
+    <tr><td class="mname">1 Lesson</td><td>50 minutes · 5 beats · 1 can-do goal · 1 homework</td><td>1 week</td></tr>
+    <tr><td class="mname">1 Mission</td><td>4 teaching lessons + 1 Mission Complete (project + can-do check)</td><td>5 weeks</td></tr>
+    <tr><td class="mname">1 Level</td><td>6 Missions = 30 lessons + The Proof (final recorded assessment)</td><td>~7 months</td></tr>
+    <tr><td class="mname">Full path</td><td>A1 → C1 = 150 lessons</td><td>~3 years</td></tr>
+  </table>
+  <p class="tiny">At 2×/week a level takes ~3.5 months. The design is frequency-agnostic on purpose: every lesson is self-contained and every mission ends in a deliverable, so a student who pauses for a month re-enters at a mission boundary without feeling lost.</p>
+</div></section>
+
+<!-- ══════════════════════════════ THE PATH ══════════════════════════════ -->
+<section id="path"><div class="wrap">
+  <div class="sec-label">The journey</div>
+  <h2 class="sec-title">Five levels, five identities</h2>
+  <p class="lede">Each level is named for who the student becomes, not what grammar they cover. This is the language you use on your profile, in the trial lesson, and in every renewal conversation.</p>
+
+  <table>
+    <tr><th>Level</th><th>Name</th><th>The promise</th><th>The one-line proof</th></tr>
+    <tr class="lv-a1"><td class="mno">A1</td><td class="mname">SAY IT</td><td>Your first 1,000 words — out loud</td><td class="tiny">"I had a five-minute conversation with a stranger and it worked."</td></tr>
+    <tr class="lv-a2"><td class="mno">A2</td><td class="mname">GET AROUND</td><td>Handle the world in English</td><td class="tiny">"I traveled for two weeks and never needed to switch languages."</td></tr>
+    <tr class="lv-b1"><td class="mno">B1</td><td class="mname">HOLD YOUR OWN</td><td>Have the conversation, don't just survive it</td><td class="tiny">"I told a story at dinner and people laughed in the right place."</td></tr>
+    <tr class="lv-b2"><td class="mno">B2</td><td class="mname">SAY WHAT YOU MEAN</td><td>Precision, opinion, nuance</td><td class="tiny">"I disagreed with my boss in English and it landed exactly how I intended."</td></tr>
+    <tr class="lv-c1"><td class="mno">C1</td><td class="mname">SOUND LIKE YOU</td><td>Your personality, in English</td><td class="tiny">"People stopped telling me my English is good. They just talk to me."</td></tr>
+  </table>
+
+  <div class="callout">
+    <span class="ct">Use these names commercially</span>
+    "I'm on <strong>Mission 4 of Hold Your Own</strong>" is a sentence a student will say to a friend. "I'm on American English File 3, unit 5B" is not. The naming is a retention and referral feature, not decoration.
+  </div>
+</div></section>
+
+<!-- ══════════════════════════════ A1 ══════════════════════════════ -->
+<section id="a1"><div class="wrap">
+<div class="level lv-a1">
+  <div class="level-head">
+    <div class="lh-top"><span class="lh-code">LEVEL 1 · A1</span></div>
+    <h3>SAY IT</h3>
+    <p class="lh-tag">Your first 1,000 words — out loud.</p>
+    <div class="lh-meta"><span>30 lessons</span><span>6 missions</span><span>Entry: true or false beginner</span><span>Exit: A1+ → A2</span></div>
+  </div>
+  <div class="level-body">
+
+    <div class="promise">
+      <div class="pl">By the end of SAY IT, the student can…</div>
+      <ul>
+        <li>Introduce themselves for 60 seconds without preparing</li>
+        <li>Describe their routine, their home, their city and their people</li>
+        <li>Order food, shop, ask prices, ask for help — and understand the answer</li>
+        <li>Talk about right now (present continuous) and last weekend (past simple)</li>
+        <li>Ask ten question types, not just answer them</li>
+        <li>Survive a five-minute conversation with a patient stranger</li>
+      </ul>
+    </div>
+
+    <h4>The A1 design problem — and the answer</h4>
+    <p class="tiny">A true beginner shares almost no language with you. The temptation is to fill the gap with translation, or with content built for children. Your trial lesson already solved this beautifully with the <strong>cognate wall</strong> — "you already know hundreds of English words." SAY IT scales that solution across the level: <strong>every A1 lesson opens with something the student can already partly do</strong>, so they never start from nothing. And because A1 speech is short, A1 activities are <em>timed and countable</em> — Beat the Clock, Sound Sprint, The Escalator — which turns tiny sentences into a visible score instead of a poverty.</p>
+
+    <h4>Grammar spine <span class="pill">hidden — AEF Starter + AEF 1</span></h4>
+    <p class="tiny">verb <em>be</em> (all forms) · a/an, plurals · this/that/these/those · possessive 's &amp; adjectives · present simple all forms · adverbs of frequency · <em>can/can't</em> · there is/are · prepositions of time &amp; place · object pronouns · <em>like</em> + -ing · imperatives · <em>would like</em> · count/uncount + some/any/how much/how many · present continuous · <em>was/were</em> · past simple regular &amp; irregular · question words · <em>be going to</em> (intro)</p>
+
+    <table>
+      <tr><th>#</th><th>Mission</th><th>Can-do destination</th><th>Grammar carried</th><th>Signature media</th><th>Mission project</th></tr>
+      <tr><td class="mno">M1</td><td class="mname">This Is Me</td><td>Introduce yourself, spell, count, say where you're from and what you do</td><td class="tiny">be · a/an · possessives · question words</td><td class="tiny">"What a Wonderful World" (Armstrong) · the cognate wall</td><td class="tiny">60-second voice note: "Hello, I'm…"</td></tr>
+      <tr><td class="mno">M2</td><td class="mname">My Days</td><td>Describe your routine and your week; say when and how often</td><td class="tiny">present simple · frequency adverbs · time prepositions</td><td class="tiny">Pixar short <em>Piper</em> — no dialogue, so the student narrates</td><td class="tiny">"My Perfect Day" — 8 photos, 8 sentences</td></tr>
+      <tr><td class="mno">M3</td><td class="mname">Where I Live</td><td>Describe your home and city; give and follow directions</td><td class="tiny">there is/are · place prepositions · imperatives</td><td class="tiny">Google Street View tour · "Lemon Tree" (Fools Garden)</td><td class="tiny">Walking tour of my street — 90-second video</td></tr>
+      <tr><td class="mno">M4</td><td class="mname">I Want That</td><td>Order, shop, ask prices, ask for help, complain politely</td><td class="tiny">would like · can I have · count/uncount · some/any</td><td class="tiny"><em>Paddington</em> — the marmalade sandwich scene</td><td class="tiny">Order a full meal, on video, with no script</td></tr>
+      <tr><td class="mno">M5</td><td class="mname">Right Now</td><td>Say what's happening as it happens; describe people, clothes, weather</td><td class="tiny">present continuous vs simple · adjectives</td><td class="tiny">Pixar short <em>For the Birds</em> · live city webcams</td><td class="tiny">Narrate a 3-minute silent film, live</td></tr>
+      <tr><td class="mno">M6</td><td class="mname">Last Weekend</td><td>Tell a simple true story about your past</td><td class="tiny">was/were · past simple regular + irregular · past questions</td><td class="tiny">The first 4 minutes of <em>Up</em> (no dialogue) · "Yesterday"</td><td class="tiny">"My Weekend in 5 Sentences" — voice note</td></tr>
+    </table>
+
+    <h4>Sample lesson — A1 · M1 · L1 "This Is Me" <span class="pill">built for you as the flagship</span></h4>
+    <table>
+      <tr><th>Beat</th><th>Activity</th><th>What it does</th></tr>
+      <tr><td class="mname">HOOK</td><td>Word Detective — 12 cognates on screen; student says each aloud, clicks to see it inside a real sentence</td><td class="tiny">Proves "you already know hundreds of words" in four minutes. A zero-anxiety opening.</td></tr>
+      <tr><td class="mname">INPUT</td><td>Four voices, four countries, four jobs — student matches voice to flag, then to job</td><td class="tiny">First real listening. Success is guaranteed because the answer set is visual.</td></tr>
+      <tr><td class="mname">BUILD</td><td><em>be</em>: Meaning (CCQs) → Form (I am / you are grid) → Pronunciation (I'm, he's, she's) → controlled practice</td><td class="tiny">Standard CELTA MFP. Contractions from minute one, so the student never sounds robotic.</td></tr>
+      <tr><td class="mname">PLAY</td><td><strong>The Escalator</strong> — "I'm Nanda." → + country → + job → + city → + one more thing. The staircase fills visually.</td><td class="tiny">The best A1 mechanic there is. A 3-word sentence becomes a 15-word one in five rounds, visibly.</td></tr>
+      <tr><td class="mname">LAND</td><td>Can-do stamp, then a 60-second recording: "Hello, I'm…"</td><td class="tiny">First entry in the Fluency Log. Kept for thirty lessons.</td></tr>
+    </table>
+  </div>
+</div>
+</div></section>
+
+<!-- ══════════════════════════════ A2 ══════════════════════════════ -->
+<section id="a2"><div class="wrap">
+<div class="level lv-a2">
+  <div class="level-head">
+    <div class="lh-top"><span class="lh-code">LEVEL 2 · A2</span></div>
+    <h3>GET AROUND</h3>
+    <p class="lh-tag">Handle the world in English.</p>
+    <div class="lh-meta"><span>30 lessons</span><span>6 missions</span><span>Entry: A1 complete</span><span>Exit: A2+ → B1</span></div>
+  </div>
+  <div class="level-body">
+
+    <div class="promise">
+      <div class="pl">By the end of GET AROUND, the student can…</div>
+      <ul>
+        <li>Travel for two weeks without switching out of English</li>
+        <li>Tell a past story with two tenses — something happened <em>while</em> something else was happening</li>
+        <li>Compare, rank and recommend: people, places, options</li>
+        <li>Talk about experiences ("Have you ever…?") and plans ("I'm going to…")</li>
+        <li>Give advice and state rules and obligations</li>
+        <li>Handle a problem: a delay, a wrong order, a lost bag, a misunderstanding</li>
+      </ul>
+    </div>
+
+    <h4>Grammar spine <span class="pill">hidden — AEF 1 late + AEF 2</span></h4>
+    <p class="tiny">present simple vs continuous · past simple vs past continuous · <em>be going to</em> vs <em>will</em> · present perfect with ever/never/just/yet/already · comparatives &amp; superlatives · <em>have to / must / should</em> · adverbs of manner · quantifiers (much/many/a lot/a few) · verb patterns (to + infinitive vs -ing) · first conditional + <em>when</em> · <em>used to</em> · possessive pronouns · too/enough · something/anything/nothing · adjective + preposition</p>
+
+    <table>
+      <tr><th>#</th><th>Mission</th><th>Can-do destination</th><th>Grammar carried</th><th>Signature media</th><th>Mission project</th></tr>
+      <tr><td class="mno">M1</td><td class="mname">The Trip</td><td>Book, board, arrive, complain, recover — then tell the story afterwards</td><td class="tiny">past simple vs past continuous · travel collocations</td><td class="tiny">Real airline announcements · <em>Modern Family</em> travel cold-opens</td><td class="tiny">"My worst travel story" — 2-minute video</td></tr>
+      <tr><td class="mno">M2</td><td class="mname">People I Know</td><td>Describe personality and appearance; compare people</td><td class="tiny">comparatives &amp; superlatives · adjective order · too/enough</td><td class="tiny">"Firework" (Katy Perry) · <em>Great British Bake Off</em> intros</td><td class="tiny">"The three people who made me" — narrated photo essay</td></tr>
+      <tr><td class="mno">M3</td><td class="mname">Plans &amp; Promises</td><td>Talk about the future three ways and mean three different things</td><td class="tiny">going to · will · present continuous for arrangements</td><td class="tiny">"The Lazy Song" (Bruno Mars) — a <em>gonna</em> goldmine</td><td class="tiny">My five-year plan — pitched in 90 seconds</td></tr>
+      <tr><td class="mno">M4</td><td class="mname">Been There</td><td>Talk about life experience without dating it</td><td class="tiny">present perfect: ever/never/just/yet/already</td><td class="tiny">"Somewhere Only We Know" · travel vlogger openers</td><td class="tiny">My "Have you ever…" bucket list — recorded</td></tr>
+      <tr><td class="mno">M5</td><td class="mname">Rules &amp; Advice</td><td>Say what's required, forbidden and advisable — at work, in health, in your country</td><td class="tiny">must / have to / should / don't have to</td><td class="tiny">Real signs &amp; notices photo bank · airline safety videos</td><td class="tiny">"A survival guide to my country" — for a foreign friend</td></tr>
+      <tr><td class="mno">M6</td><td class="mname">If &amp; When</td><td>Talk through consequences and decisions</td><td class="tiny">first conditional · when/as soon as/unless · verb patterns</td><td class="tiny">A branching, <em>Bandersnatch</em>-style narrative</td><td class="tiny">Write and perform a choose-your-own-adventure</td></tr>
+    </table>
+  </div>
+</div>
+</div></section>
+
+<!-- ══════════════════════════════ B1 ══════════════════════════════ -->
+<section id="b1"><div class="wrap">
+<div class="level lv-b1">
+  <div class="level-head">
+    <div class="lh-top"><span class="lh-code">LEVEL 3 · B1</span></div>
+    <h3>HOLD YOUR OWN</h3>
+    <p class="lh-tag">Have the conversation — don't just survive it.</p>
+    <div class="lh-meta"><span>30 lessons</span><span>6 missions</span><span>Entry: A2 complete</span><span>Exit: B1+ → B2</span></div>
+  </div>
+  <div class="level-body">
+
+    <div class="promise">
+      <div class="pl">By the end of HOLD YOUR OWN, the student can…</div>
+      <ul>
+        <li>Tell a three-minute story with tension, timing, and a punchline that lands</li>
+        <li>Talk about what didn't happen — regrets, alternatives, hypotheticals</li>
+        <li>Report what someone else said, accurately and naturally</li>
+        <li>Speculate: "it must be…", "it can't be…", "she might have…"</li>
+        <li>Follow a podcast, a video essay or a sitcom without subtitles most of the time</li>
+        <li>Disagree without disappearing</li>
+      </ul>
+    </div>
+
+    <h4>Grammar spine <span class="pill">hidden — AEF 3</span></h4>
+    <p class="tiny">present perfect + for/since · present perfect continuous · past perfect · full narrative tenses · second conditional · third conditional (introduced) · passive (present &amp; past) · reported speech · defining &amp; non-defining relative clauses · modals of deduction (must/might/could/can't) · future forms contrasted · gerunds &amp; infinitives · question tags · so/such · <em>used to</em> vs <em>be used to</em> · the core 60 phrasal verbs</p>
+
+    <table>
+      <tr><th>#</th><th>Mission</th><th>Can-do destination</th><th>Grammar carried</th><th>Signature media</th><th>Mission project</th></tr>
+      <tr><td class="mno">M1</td><td class="mname">The Story</td><td>Tell a real story from your life so that people stay with you</td><td class="tiny">narrative tenses · past perfect · time linkers</td><td class="tiny">The Moth (5-minute true stories) · <em>Ted Lasso</em> monologues</td><td class="tiny">A true story from my life — 3 minutes, recorded</td></tr>
+      <tr><td class="mno">M2</td><td class="mname">Who I Used To Be</td><td>Talk about change, memory, and who you were</td><td class="tiny">used to / would · be used to / get used to</td><td class="tiny">"Somebody That I Used to Know" (Gotye) — mandatory</td><td class="tiny">Then vs Now — a narrated photo essay</td></tr>
+      <tr><td class="mno">M3</td><td class="mname">What If</td><td>Talk about the life you didn't live</td><td class="tiny">2nd &amp; 3rd conditionals · wish · I'd rather</td><td class="tiny">"If I Were a Boy" (Beyoncé) · "The Scientist" (Coldplay)</td><td class="tiny">"The decision that changed everything" — told twice: what happened, and what if it hadn't</td></tr>
+      <tr><td class="mno">M4</td><td class="mname">Behind the News</td><td>Report events neutrally; notice when language is hiding an actor</td><td class="tiny">passive voice · reporting verbs · impersonal structures</td><td class="tiny">The same story in three outlets · BBC 6 Minute News</td><td class="tiny">A 90-second news report, delivered to camera</td></tr>
+      <tr><td class="mno">M5</td><td class="mname">He Said, She Said</td><td>Relay conversations, instructions and misunderstandings</td><td class="tiny">reported speech · reporting verbs beyond <em>say</em> · say/tell/ask</td><td class="tiny"><em>Brooklyn Nine-Nine</em> misunderstanding plots · a podcast clip to relay</td><td class="tiny">Listen to a 5-minute podcast; retell it from memory</td></tr>
+      <tr><td class="mno">M6</td><td class="mname">Best Guess</td><td>Speculate and deduce out loud with the right degree of certainty</td><td class="tiny">modals of deduction, present &amp; past · degrees of certainty</td><td class="tiny">Unsolved-mystery photo sets · <em>Only Murders in the Building</em></td><td class="tiny">Solve a cold case — present your theory and defend it</td></tr>
+    </table>
+  </div>
+</div>
+</div></section>
+
+<!-- ══════════════════════════════ B2 ══════════════════════════════ -->
+<section id="b2"><div class="wrap">
+<div class="level lv-b2">
+  <div class="level-head">
+    <div class="lh-top"><span class="lh-code">LEVEL 4 · B2</span></div>
+    <h3>SAY WHAT YOU MEAN</h3>
+    <p class="lh-tag">Precision, opinion, nuance.</p>
+    <div class="lh-meta"><span>30 lessons</span><span>6 missions</span><span>Entry: B1 complete</span><span>Exit: B2+ → C1</span></div>
+  </div>
+  <div class="level-body">
+
+    <div class="promise">
+      <div class="pl">By the end of SAY WHAT YOU MEAN, the student can…</div>
+      <ul>
+        <li>Argue a position, concede a point, and come back — without losing the thread</li>
+        <li>Say <em>almost</em>, <em>barely</em>, <em>arguably</em>, <em>to some extent</em> — and mean each one exactly</li>
+        <li>Switch register deliberately: the same message to a friend, a client, a regulator</li>
+        <li>Give a structured five-minute talk with no notes</li>
+        <li>Hear what someone <em>implied</em>, not only what they said</li>
+        <li>Handle a meeting, an interview, or a disagreement with a superior</li>
+      </ul>
+    </div>
+
+    <h4>Grammar spine <span class="pill">hidden — AEF 4</span></h4>
+    <p class="tiny">the full narrative tense system · future perfect &amp; future continuous · mixed conditionals · <em>wish / if only / should have</em> · advanced passives including <em>it is said that</em> · advanced reported speech · reduced &amp; non-defining relative clauses · past modals · articles (advanced) · adjective + preposition · noun + preposition · -ed vs -ing adjectives · discourse markers · unreal past · inversion (introduced) · hedging &amp; softening</p>
+
+    <table>
+      <tr><th>#</th><th>Mission</th><th>Can-do destination</th><th>Grammar carried</th><th>Signature media</th><th>Mission project</th></tr>
+      <tr><td class="mno">M1</td><td class="mname">Take a Side</td><td>Build and defend an argument; concede without collapsing</td><td class="tiny">concession (although/whereas) · hedging · discourse markers</td><td class="tiny"><em>12 Angry Men</em> — the turning-point scenes</td><td class="tiny">Deliver a verdict and survive cross-examination</td></tr>
+      <tr><td class="mno">M2</td><td class="mname">The Fine Print</td><td>Decode formal English and turn it back into human</td><td class="tiny">advanced passives · nominalisation · impersonal structures</td><td class="tiny">Real terms &amp; conditions · <em>The Big Short</em> explainer scenes</td><td class="tiny">Translate a page of legalese into plain English — then back again</td></tr>
+      <tr><td class="mno">M3</td><td class="mname">Almost, Nearly, Barely</td><td>Control degree and intensity so people hear exactly what you meant</td><td class="tiny">degree adverbs · gradable vs absolute adjectives · -ed/-ing</td><td class="tiny">Reviews of one film across four outlets</td><td class="tiny">Review something you love — three ways: honest, diplomatic, brutal</td></tr>
+      <tr><td class="mno">M4</td><td class="mname">What Should Have Happened</td><td>Criticise, regret and analyze the past constructively</td><td class="tiny">past modals · mixed conditionals · wish / if only</td><td class="tiny">Post-match analysis · <em>Severance</em> and <em>Succession</em> fallout scenes</td><td class="tiny">The post-mortem: analyze a real failure, yours or public</td></tr>
+      <tr><td class="mno">M5</td><td class="mname">Big Ideas</td><td>Talk about abstractions with structure and signposting</td><td class="tiny">discourse markers · cohesion · complex noun phrases</td><td class="tiny">Chimamanda Adichie, <em>The danger of a single story</em> · Kurzgesagt</td><td class="tiny">A five-minute TED-style talk — no notes, recorded</td></tr>
+      <tr><td class="mno">M6</td><td class="mname">Reading Between Lines</td><td>Detect implication, bias, tone and spin</td><td class="tiny">connotation · euphemism · implicature · emphasis</td><td class="tiny">Advertising teardowns · <em>Black Mirror</em> — one episode across the mission</td><td class="tiny">Decode an ad campaign — then write a satirical version</td></tr>
+    </table>
+  </div>
+</div>
+</div></section>
+
+<!-- ══════════════════════════════ C1 ══════════════════════════════ -->
+<section id="c1"><div class="wrap">
+<div class="level lv-c1">
+  <div class="level-head">
+    <div class="lh-top"><span class="lh-code">LEVEL 5 · C1</span></div>
+    <h3>SOUND LIKE YOU</h3>
+    <p class="lh-tag">Your personality, in English.</p>
+    <div class="lh-meta"><span>30 lessons</span><span>6 missions</span><span>Entry: B2 complete</span><span>Exit: C1+ / C2 pathway</span></div>
+  </div>
+  <div class="level-body">
+
+    <div class="promise">
+      <div class="pl">By the end of SOUND LIKE YOU, the student can…</div>
+      <ul>
+        <li>Use emphasis structurally — inversion, clefts, fronting — not just louder</li>
+        <li>Compress: say in twelve words what used to take forty</li>
+        <li>Move fluidly between registers, and know exactly which one they're in</li>
+        <li>Be funny on purpose. Be ironic on purpose. Be understated on purpose.</li>
+        <li>Think aloud in English — hesitate, self-correct and reformulate the way a native does</li>
+        <li>Stop being complimented on their English, and simply be talked to</li>
+      </ul>
+    </div>
+
+    <div class="callout blue">
+      <span class="ct">What actually blocks C1 students</span>
+      Almost never grammar. It's <strong>flatness</strong> — technically correct English with no rhythm, no jokes, no shading, no personality. C1 is therefore a <em>style</em> course, not a structure course. Every mission attacks one dimension of voice.
+    </div>
+
+    <h4>Language spine <span class="pill">hidden — AEF 5 + CEFR C1 descriptors</span></h4>
+    <p class="tiny">inversion for emphasis · cleft sentences (<em>What I love is…</em> / <em>It was X that…</em>) · fronting · participle clauses · ellipsis &amp; substitution · nominalisation · the subjunctive · complex and double passives · advanced modality and hedging · register shifting · idiomatic collocation &amp; delexical verbs · connotation, nuance, euphemism · irony, understatement, litotes · discourse cohesion and spoken-grammar features (fillers, reformulation, tails)</p>
+
+    <table>
+      <tr><th>#</th><th>Mission</th><th>Can-do destination</th><th>Language carried</th><th>Signature media</th><th>Mission project</th></tr>
+      <tr><td class="mno">M1</td><td class="mname">Emphasis</td><td>Put the weight exactly where you want it</td><td class="tiny">inversion · cleft sentences · fronting · stress shifting</td><td class="tiny">Great speeches archive · "Everybody's Free (To Wear Sunscreen)"</td><td class="tiny">Write and deliver a 3-minute speech built on a rhetorical spine</td></tr>
+      <tr><td class="mno">M2</td><td class="mname">Compression</td><td>Say more with less</td><td class="tiny">participle clauses · nominalisation · ellipsis · substitution</td><td class="tiny">Headline writing · <em>Every Frame a Painting</em> video essays</td><td class="tiny">Cut 500 words to 150 without losing a single idea</td></tr>
+      <tr><td class="mno">M3</td><td class="mname">The Dial</td><td>Shift register on purpose — and notice when others do</td><td class="tiny">formality gradients · euphemism · softening · code-switching</td><td class="tiny"><em>Sorry to Bother You</em> · <em>Succession</em> and <em>The Bear</em> side by side</td><td class="tiny">One message, five audiences — and defend every choice</td></tr>
+      <tr><td class="mno">M4</td><td class="mname">Idiom &amp; Image</td><td>Reach for the phrase a native would actually reach for</td><td class="tiny">collocation · metaphor · delexical verbs · phrasal verb nuance</td><td class="tiny">Sports and business commentary · stand-up sets</td><td class="tiny">Record a 10-minute podcast episode on your own expertise</td></tr>
+      <tr><td class="mno">M5</td><td class="mname">Irony &amp; Subtext</td><td>Hear and produce what is meant but not said</td><td class="tiny">understatement · litotes · sarcasm markers · the intonation of irony</td><td class="tiny"><em>Fleabag</em> · <em>Succession</em> · British and American humor contrasted</td><td class="tiny">Scene analysis: what everyone means and nobody says</td></tr>
+      <tr><td class="mno">M6</td><td class="mname">Your Voice</td><td>Be recognisably yourself in English</td><td class="tiny">spoken grammar · reformulation · fillers · self-correction · tails</td><td class="tiny">Long-form interview podcasts · the student's own Fluency Log from A1</td><td class="tiny">A 10-minute unscripted conversation — recorded, transcribed, analyzed</td></tr>
+    </table>
+
+    <div class="callout green">
+      <span class="ct">The closing move of the whole course</span>
+      C1 M6 ends by playing the student their <strong>very first 60-second recording from A1 Mission 1</strong>, immediately followed by their final ten-minute unscripted conversation. Nothing you can say will land harder than that cut.
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- ══════════════════════════════ ACTIVITY BANK ══════════════════════════════ -->
+<section id="activities"><div class="wrap">
+  <div class="sec-label">The engine</div>
+  <h2 class="sec-title">24 activity mechanics</h2>
+  <p class="lede">These are the PLAY beat. Every one is buildable as single-file HTML with no library, works one-on-one, and — as you asked — none of them is open role-play. Where a mechanic <em>is</em> role-play-adjacent, it's tightly guided and pointed only at the student ("What would you say if someone told you…"). Your existing mechanics — dice, wheel, MadLibs, bingo, scramble, breakout, myth-or-fact — all stay; these are additions.</p>
+
+  <h3>Tier 1 — the six that change the most</h3>
+  <p class="tiny" style="margin-bottom:18px">If you build nothing else from this list, build these. Each one directly attacks "I understand English but the words don't come out."</p>
+
+  <div class="grid2">
+    <div class="act">
+      <div class="an">🪜 The Escalator</div>
+      <div class="ad">A sentence starts as short as possible. Each round the student must add exactly one new element — an object, a time, a place, a reason, an opinion — without breaking it. A visual staircase fills one step at a time.<br><em>"I ate." → "I ate pizza." → "I ate pizza last night." → "I ate pizza last night because I was too tired to cook."</em></div>
+      <div class="am"><b>Levels:</b> all — A1 does five steps, C1 does ten with subordination. <b>Why it works:</b> it makes sentence complexity <em>visible and countable</em>, so growth is felt inside the same lesson.</div>
+    </div>
+    <div class="act">
+      <div class="an">🎙️ Shadowing Studio</div>
+      <div class="ad">Native audio plays with the transcript marked for stress and linking. The student records themselves over it using the browser's own MediaRecorder — no plugin, no upload — then plays both back to back and hears the gap.</div>
+      <div class="am"><b>Levels:</b> all. <b>Why it works:</b> the only pronunciation activity where the student, not the teacher, notices the error. Also the single most impressive thing a student can show a friend.</div>
+    </div>
+    <div class="act">
+      <div class="an">🔊 Connected Speech Decoder</div>
+      <div class="ad">A fast native clip plays. The student types what they <em>actually</em> heard, then reveals the real words. <em>"Whaddaya wanna do?" → "What do you want to do?"</em> Scored out of ten, replayable at half speed.</div>
+      <div class="am"><b>Levels:</b> A2–C1. <b>Why it works:</b> it delivers directly on the promise you already make in the trial lesson — and it's the fix for "native speakers talk too fast."</div>
+    </div>
+    <div class="act">
+      <div class="an">🎚️ The Register Dial</div>
+      <div class="ad">One message, one slider. Drag from 1 (texting a friend) to 5 (writing to a regulator) and the sentence on screen morphs. Then the slider is emptied and the student produces each level themselves.</div>
+      <div class="am"><b>Levels:</b> B1–C1. <b>Why it works:</b> register is the last thing separating a good B2 from a C1, and almost nobody teaches it explicitly.</div>
+    </div>
+    <div class="act">
+      <div class="an">💰 Word Auction</div>
+      <div class="ad">The student starts with 100 points and sees ten sentences, some correct, some not. They bet points on each according to how sure they are. Confident-and-wrong is expensive; hesitant-and-right is cheap.</div>
+      <div class="am"><b>Levels:</b> A2–C1. <b>Why it works:</b> it separates <em>knowing</em> from <em>guessing</em>, which a normal Check Answers button can never do. It shows you exactly where false confidence lives.</div>
+    </div>
+    <div class="act">
+      <div class="an">⏱️ Beat the Clock</div>
+      <div class="ad">Sixty seconds on a visual bar. Produce as many as you can: things in this room, ways to say "very good", verbs that go with <em>make</em>, reasons you'd quit a job. The count is tapped in and the personal best is remembered.</div>
+      <div class="am"><b>Levels:</b> all. <b>Why it works:</b> mild time pressure is what forces retrieval, and a personal best turns fluency into a score the student wants to beat.</div>
+    </div>
+  </div>
+
+  <h3>Tier 2 — the rotation</h3>
+  <p class="tiny" style="margin-bottom:18px">Use these to keep the PLAY beat unpredictable. Your standards already say never to repeat a warm-up format three lessons running — the same rule applies here.</p>
+
+  <div class="grid3">
+    <div class="act"><div class="an">🩺 Sentence Surgery</div><div class="ad">A "sick" sentence appears on an operating table. The student clicks the word that's wrong, then chooses the cure from three options. The vital-signs bar goes green when it's healed.</div><div class="am"><b>All levels</b> · gamified error correction</div></div>
+    <div class="act"><div class="an">🎭 The Wrong Answer Game</div><div class="ad">Give the <em>worst possible</em> answer to a normal question — but it must be grammatically perfect. "How was your holiday?" → "I regret every second and I blame my mother."</div><div class="am"><b>A2–C1</b> · kills perfectionism anxiety</div></div>
+    <div class="act"><div class="an">🧩 Odd One Out — But Justify</div><div class="ad">Four items. Any of them can be the odd one out, if you can justify it. There is no wrong answer, only a weak reason.</div><div class="am"><b>All levels</b> · pure speaking, zero prep</div></div>
+    <div class="act"><div class="an">😀 Emoji Translate</div><div class="ad">🛫😴🧳❓ → "I fell asleep on the plane and I think I lost my luggage." Student decodes, then builds their own for you to decode.</div><div class="am"><b>A1–B1</b> · forces full sentences</div></div>
+    <div class="act"><div class="an">⏸️ The Pause Button</div><div class="ad">A scene plays and stops mid-beat. What is the next line? The student predicts, then it plays on. Score for meaning, not exact words.</div><div class="am"><b>A2–C1</b> · builds prediction, the core listening skill</div></div>
+    <div class="act"><div class="an">🕵️ Guess My Word</div><div class="ad">The screen shows a word to one side only. The other asks yes/no questions to find it. Question counter visible; under seven is a win.</div><div class="am"><b>All levels</b> · question formation, which students under-practice</div></div>
+    <div class="act"><div class="an">🎛️ Where Do You Stand</div><div class="ad">A slider between two extremes ("money doesn't matter at all" ↔ "money is everything"). The student places themselves, then defends that exact position — not the extreme.</div><div class="am"><b>B1–C1</b> · nuance and hedging language</div></div>
+    <div class="act"><div class="an">🤖 Fix the AI</div><div class="ad">"An AI wrote this paragraph and made six mistakes." The student hunts them. You write the errors deliberately, targeting the lesson's grammar.</div><div class="am"><b>A2–C1</b> · error correction with no ego attached</div></div>
+    <div class="act"><div class="an">🗑️ Truth or Trash</div><div class="ad">Sentences sort into "real English people actually say" and "textbook English nobody says." <em>"How do you do?" → trash.</em></div><div class="am"><b>B1–C1</b> · naturalness and register awareness</div></div>
+    <div class="act"><div class="an">🧠 Memory Match</div><div class="ad">Classic flip-and-pair grid: collocation halves, phrasal verb and meaning, idiom and situation. Timed, with a personal best.</div><div class="am"><b>All levels</b> · vocabulary consolidation</div></div>
+    <div class="act"><div class="an">🔗 Chain Reaction</div><div class="ad">Each answer must start with the last letter of the previous one — and stay inside the topic. Timer per turn, three lives.</div><div class="am"><b>A1–B1</b> · lexical retrieval speed</div></div>
+    <div class="act"><div class="an">🏆 Ranking Battle</div><div class="ad">Rank six items. Then you challenge the top choice and the student defends it, then the bottom, then you swap two and see whether they'll change their mind.</div><div class="am"><b>A2–C1</b> · opinion and concession language</div></div>
+    <div class="act"><div class="an">🎧 Guess the Speaker</div><div class="ad">Three voices say the same sentence. Where are they from? How old? How do they feel? Reveal, then discuss what gave it away.</div><div class="am"><b>B1–C1</b> · accent exposure, listening for tone</div></div>
+    <div class="act"><div class="an">🖼️ Caption This</div><div class="ad">An absurd photo. Write the funniest caption — but it must contain today's structure. Three attempts, the student picks the winner.</div><div class="am"><b>All levels</b> · playful controlled practice</div></div>
+    <div class="act"><div class="an">🛗 The Elevator</div><div class="ad">Thirty seconds, a random topic, no preparation, a live word counter running. The second attempt on the same topic always beats the first — which is the whole point.</div><div class="am"><b>B1–C1</b> · spontaneity under pressure</div></div>
+    <div class="act"><div class="an">🎲 Story Cubes</div><div class="ad">Three random icons appear. Build a story containing all three, in the target tense. Roll again for a harder combination.</div><div class="am"><b>A2–B2</b> · narrative fluency</div></div>
+    <div class="act"><div class="an">🔀 Two Truths and a Lie</div><div class="ad">The student writes three statements about their life in the target structure. You guess. Then you go, and they interrogate you.</div><div class="am"><b>All levels</b> · personalised production and questions</div></div>
+    <div class="act"><div class="an">💬 What Would You Say If…</div><div class="ad">The guided, student-only reply drill you asked for. A single line appears — "Someone tells you they've just been fired." The student responds. Three model responses reveal afterwards.</div><div class="am"><b>All levels</b> · role-play's benefit, none of its awkwardness</div></div>
+  </div>
+
+  <div class="callout">
+    <span class="ct">Rotation rule — add this to your standards file</span>
+    A mechanic may not appear in two consecutive lessons, and each mission of five lessons must include at least one Tier 1 mechanic and at least three distinct Tier 2 mechanics. This is the difference between "the lessons have games" and "the lessons are unpredictable" — and unpredictability is what students actually experience as fun.
+  </div>
+</div></section>
+
+<!-- ══════════════════════════════ MEDIA BANK ══════════════════════════════ -->
+<section id="media"><div class="wrap">
+  <div class="sec-label">The INPUT beat</div>
+  <h2 class="sec-title">Media bank</h2>
+  <p class="lede">Every lesson's INPUT beat uses something a native actually made. Below is a starting library, chosen so that the language level and the emotional payoff line up. Use clips, not whole works — 60 to 180 seconds is the sweet spot inside a 50-minute lesson.</p>
+
+  <h3>🎵 Songs</h3>
+  <table class="media">
+    <tr><th>Level</th><th>Song</th><th>Teaches</th><th>Why this one</th></tr>
+    <tr><td>A1</td><td>What a Wonderful World — Louis Armstrong</td><td>I see… · colors · adjectives · present simple</td><td class="why">Slow enough to sing along on day one, and every line is the same structure.</td></tr>
+    <tr><td>A1</td><td>Lemon Tree — Fool's Garden</td><td>Present continuous ("I'm sitting here…")</td><td class="why">The clearest present continuous song in existence. Whole verses are the target form.</td></tr>
+    <tr><td>A1</td><td>Count on Me — Bruno Mars</td><td>can / will · friendship vocabulary</td><td class="why">Warm, simple, and the chorus is a complete grammatical sentence.</td></tr>
+    <tr><td>A2</td><td>The Lazy Song — Bruno Mars</td><td><em>going to</em> · gonna · daily activities</td><td class="why">Wall-to-wall "I'm gonna", funny video, and it pairs perfectly with the Connected Speech Decoder.</td></tr>
+    <tr><td>A2</td><td>Yesterday — The Beatles</td><td>Past simple · <em>used to</em></td><td class="why">Universally known, so students arrive already half-knowing the words.</td></tr>
+    <tr><td>A2</td><td>Firework — Katy Perry</td><td>Similes · comparatives · <em>do you ever feel…</em></td><td class="why">Every line is a comparison — the mission's target structure, forty times over.</td></tr>
+    <tr><td>B1</td><td>Somebody That I Used to Know — Gotye</td><td><em>used to</em> · reported speech · relationships</td><td class="why">The whole song is the grammar point. Non-negotiable for B1 M2.</td></tr>
+    <tr><td>B1</td><td>If I Were a Boy — Beyoncé</td><td>Second conditional</td><td class="why">Second conditional in the title, the chorus and every verse. Also opens a strong discussion.</td></tr>
+    <tr><td>B1</td><td>The Scientist — Coldplay</td><td>Wish · regret · <em>I'd go back to the start</em></td><td class="why">Slow, sparse and emotionally direct — regret language with room to breathe.</td></tr>
+    <tr><td>B2</td><td>Big Yellow Taxi — Joni Mitchell</td><td>Present perfect · environment · irony</td><td class="why">"You don't know what you've got till it's gone" is a perfect present-perfect teaching line.</td></tr>
+    <tr><td>B2</td><td>Another Brick in the Wall — Pink Floyd</td><td>Double negatives · education debate</td><td class="why">"We don't need no education" — a whole lesson on why a native breaks the rule on purpose.</td></tr>
+    <tr><td>B2</td><td>The Man — Taylor Swift</td><td>Second conditional · argument · gender</td><td class="why">Modern, familiar, and genuinely debatable — which is the point of B2.</td></tr>
+    <tr><td>C1</td><td>Everybody's Free (To Wear Sunscreen) — Baz Luhrmann</td><td>Imperatives · advice · rhythm · irony</td><td class="why">A five-minute masterclass in emphasis and cadence. The C1 M1 centrepiece.</td></tr>
+    <tr><td>C1</td><td>Hurricane — Bob Dylan</td><td>Narrative · justice · dense idiom</td><td class="why">Fast, allusive and morally complex. Real C1 listening.</td></tr>
+    <tr><td>C1</td><td>My Shot / The Room Where It Happens — <em>Hamilton</em></td><td>Wordplay · register mixing · rhetoric</td><td class="why">Formal and street register colliding line by line — exactly The Dial mission.</td></tr>
+  </table>
+
+  <h3>🎬 Film &amp; series</h3>
+  <table class="media">
+    <tr><th>Level</th><th>Title</th><th>Use it for</th><th>Why this one</th></tr>
+    <tr><td>A1</td><td>Pixar shorts — <em>Piper</em>, <em>For the Birds</em>, <em>Lifted</em>, <em>La Luna</em></td><td>Narration practice</td><td class="why">No dialogue at all, so a beginner supplies 100% of the language. The most underrated A1 resource there is.</td></tr>
+    <tr><td>A1</td><td><em>Paddington</em></td><td>Politeness · food · everyday transactions</td><td class="why">Slow, clear, and charming enough that adults aren't embarrassed to be watching it.</td></tr>
+    <tr><td>A1/A2</td><td><em>Up</em> — the first four minutes</td><td>Past simple narration</td><td class="why">A complete life story told without a word. Students narrate it, and cry while doing so.</td></tr>
+    <tr><td>A2</td><td><em>The Great British Bake Off</em></td><td>Describing process · comparatives</td><td class="why">Slow, clear, no violence, no idiom overload, endlessly rewatchable.</td></tr>
+    <tr><td>A2</td><td><em>Modern Family</em> — cold opens</td><td>Family · travel · short comic arcs</td><td class="why">Two-minute self-contained scenes in clear American English.</td></tr>
+    <tr><td>B1</td><td><em>Ted Lasso</em></td><td>Idioms · optimism · monologues</td><td class="why">An idiom machine with genuinely moving speeches — ideal for B1 storytelling.</td></tr>
+    <tr><td>B1</td><td><em>Brooklyn Nine-Nine</em></td><td>Reported speech · misunderstandings</td><td class="why">Plots literally built on who said what to whom.</td></tr>
+    <tr><td>B1</td><td><em>Only Murders in the Building</em></td><td>Speculation · deduction modals</td><td class="why">The characters speculate out loud constantly — the exact target language, modelled.</td></tr>
+    <tr><td>B2</td><td><em>12 Angry Men</em></td><td>Argument · concession · persuasion</td><td class="why">Ninety minutes of one person changing eleven minds. The best argument-language text ever filmed.</td></tr>
+    <tr><td>B2</td><td><em>Black Mirror</em> — one episode per mission arc</td><td>Ethics debate · implication</td><td class="why">Every episode is a ready-made debate with no correct answer.</td></tr>
+    <tr><td>B2</td><td><em>The Big Short</em> — the explainer scenes</td><td>Explaining complexity simply</td><td class="why">Characters explicitly translate jargon into plain English, on screen.</td></tr>
+    <tr><td>C1</td><td><em>Succession</em></td><td>Subtext · insult · power register</td><td class="why">Nobody ever says what they mean. Perfect for Irony &amp; Subtext.</td></tr>
+    <tr><td>C1</td><td><em>The Bear</em></td><td>Overlapping speech · real speed</td><td class="why">The most realistic spoken-English pace on television. Brutal, and useful.</td></tr>
+    <tr><td>C1</td><td><em>Fleabag</em></td><td>Irony · direct address · understatement</td><td class="why">British irony at its most concentrated, with the subtext spoken aloud to camera.</td></tr>
+    <tr><td>C1</td><td><em>Sorry to Bother You</em></td><td>Code-switching · register</td><td class="why">A film whose entire premise is changing your voice for your audience. The Dial, dramatised.</td></tr>
+  </table>
+
+  <h3>📺 Talks, videos &amp; channels</h3>
+  <table class="media">
+    <tr><th>Level</th><th>Source</th><th>Use it for</th></tr>
+    <tr><td>A2/B1</td><td>Matt Cutts — <em>Try something new for 30 days</em> (TED, 3 min)</td><td>Short, slow and motivating; present perfect and future forms</td></tr>
+    <tr><td>B1</td><td>Tim Urban — <em>Inside the mind of a master procrastinator</em> (TED)</td><td>Funny, visual, narrative tenses; students recognise themselves in it</td></tr>
+    <tr><td>B1/B2</td><td>Kurzgesagt (YouTube)</td><td>Complex ideas, exceptionally clear narration, abstract vocabulary</td></tr>
+    <tr><td>B2</td><td>Chimamanda Ngozi Adichie — <em>The danger of a single story</em> (TED)</td><td>The B2 M5 centrepiece: structure, signposting and a real argument</td></tr>
+    <tr><td>B2</td><td>Amy Cuddy — <em>Your body language may shape who you are</em> (TED)</td><td>Hedging, research language, and a genuinely debatable conclusion</td></tr>
+    <tr><td>B2/C1</td><td>Vox and Johnny Harris explainers</td><td>Fast delivery, dense discourse markers, argument structure</td></tr>
+    <tr><td>C1</td><td>Ken Robinson — <em>Do schools kill creativity?</em> (TED)</td><td>Irony and comic timing — hard C1 listening disguised as an easy talk</td></tr>
+    <tr><td>C1</td><td><em>Every Frame a Painting</em> · long-form interview podcasts</td><td>Compression, analysis, and unscripted natural speech</td></tr>
+  </table>
+
+  <div class="callout blue">
+    <span class="ct">A note on sourcing</span>
+    Use short clips for teaching and commentary, link out to the original rather than redistributing files, and keep lyrics on screen only as the gap-fill you built. Your existing approach — media stays local, never pushed to the repo — already handles this correctly.
+  </div>
+</div></section>
+
+<!-- ══════════════════════════════ AI ══════════════════════════════ -->
+<section id="ai"><div class="wrap">
+  <div class="sec-label">Between lessons</div>
+  <h2 class="sec-title">The AI Partner</h2>
+  <p class="lede">Your students have unlimited access to a patient, fluent conversation partner, and almost none of them know how to use it. Give every lesson an <strong>AI Partner Card</strong>: one copy-paste prompt on the homework slide, with a copy button. It's the cheapest way to multiply practice hours without adding a minute of your time — and it's a real differentiator on your profile.</p>
+
+  <div class="callout">
+    <span class="ct">The rule that makes this work</span>
+    Every prompt ends by telling the AI to stay at the student's level and to <strong>correct only the target structure</strong>. Unconstrained AI corrects everything, overwhelms the student, and gets abandoned by week two. Constrained AI feels like a coach.
+  </div>
+
+  <div class="pname">1 · The Interrogator <span class="pill">every level · after any grammar point</span></div>
+  <div class="pwhen">Turns a new structure into twelve forced repetitions in ten minutes.</div>
+  <div class="prompt">You are my English conversation partner. My level is <span class="ph">[A1/A2/B1/B2/C1]</span>.
+Ask me 12 questions, ONE AT A TIME, waiting for my answer each time.
+Every question must require me to use <span class="ph">[the past simple]</span> in my answer.
+Topic: <span class="ph">[my last holiday]</span>.
+After each answer: if I used <span class="ph">[the past simple]</span> incorrectly, show me the corrected
+sentence in bold and move on. Ignore every other kind of mistake completely.
+Do not explain grammar unless I ask. Keep your own language at my level.</div>
+
+  <div class="pname">2 · The Upgrader <span class="pill">B1–C1 · vocabulary range</span></div>
+  <div class="pwhen">Attacks "I use the same few words again and again" — the complaint in your own trial-lesson diagnostic.</div>
+  <div class="prompt">Here is something I wrote or said: <span class="ph">[paste your text]</span>
+
+Do three things:
+1. Rewrite it so it sounds like a fluent native speaker, keeping my meaning
+   and my personality.
+2. List the 5 specific words or phrases you changed, and why yours is more natural.
+3. Give me ONE of those five to use three times this week, and tell me exactly
+   which situations to use it in.
+
+Do not make it more formal unless I asked. Do not add ideas that weren't mine.</div>
+
+  <div class="pname">3 · The Story Machine <span class="pill">A1–B1 · comprehensible input</span></div>
+  <div class="pwhen">Generates unlimited level-appropriate reading built from exactly the words the student has.</div>
+  <div class="prompt">Write me a story of about <span class="ph">[150]</span> words at <span class="ph">[A2]</span> level.
+Use ONLY these target words, and use each at least once:
+<span class="ph">[paste this lesson's 10 words]</span>
+Use the <span class="ph">[past simple]</span> throughout.
+Make it funny and give it a twist ending.
+Then ask me 5 comprehension questions, one at a time.
+Do not use any grammar above <span class="ph">[A2]</span>.</div>
+
+  <div class="pname">4 · The Devil's Advocate <span class="pill">B2–C1 · argument</span></div>
+  <div class="pwhen">Prepares a student to disagree in real time — the hardest B2 skill.</div>
+  <div class="prompt">I am going to state an opinion. Your job is to disagree with me intelligently
+and keep pushing back for 6 exchanges, one at a time.
+Be respectful but genuinely hard to convince. Ask me for evidence.
+
+After the 6th exchange, stop and tell me:
+ - the 3 strongest things I said, and why they worked
+ - 3 phrases a native speaker would have used to concede a point before
+   counter-attacking, which I did not use
+
+My level is <span class="ph">[B2]</span>. My opinion is: <span class="ph">[state it]</span></div>
+
+  <div class="pname">5 · The Accent Coach <span class="pill">all levels · pronunciation homework</span></div>
+  <div class="pwhen">Pairs with the Shadowing Studio in the lesson.</div>
+  <div class="prompt">I am a <span class="ph">[Brazilian]</span> speaker learning English.
+My problem sound is <span class="ph">[the TH sound]</span>.
+
+Give me 8 sentences to practice it. Rules:
+ - each sentence must contain the sound at least 3 times
+ - they must be sentences a real person would actually say
+ - order them from easiest to hardest
+
+Then explain, in one short paragraph, exactly what my tongue and lips should do,
+and what the most common mistake is for speakers of my language.</div>
+
+  <div class="pname">6 · The Slang Decoder <span class="pill">B1–C1 · after any series or song homework</span></div>
+  <div class="pwhen">Turns the student's own Netflix habit into a lesson.</div>
+  <div class="prompt">Here are 5 phrases I heard in <span class="ph">[name the series or song]</span>:
+<span class="ph">[list them]</span>
+
+For each one tell me:
+ - what it actually means, in simple English
+ - how formal or informal it is, from 1 to 5
+ - one situation where I could really use it
+ - one situation where it would sound wrong or strange
+
+Then write a short dialogue that uses three of them naturally.</div>
+
+  <div class="pname">7 · The Mirror <span class="pill">B2–C1 · self-analysis</span></div>
+  <div class="pwhen">Used with a transcript of the student's own recording. Confronting, and extremely effective.</div>
+  <div class="prompt">This is a transcript of me speaking English for 3 minutes: <span class="ph">[paste]</span>
+
+Analyze it and tell me:
+ - my 3 most repeated words or phrases (my verbal crutches)
+ - the level of my vocabulary, as a CEFR estimate, with evidence
+ - 3 sentences where I was correct but not natural, and what a native would say
+ - ONE habit that, if I fixed it, would make the biggest difference
+
+Be honest and specific. Do not be encouraging for its own sake.</div>
+
+  <div class="pname">8 · The Simplifier <span class="pill">all levels · confidence</span></div>
+  <div class="pwhen">For the student who freezes because they're trying to say something too complicated.</div>
+  <div class="prompt">I want to say this idea in English but it's too difficult for my level:
+<span class="ph">[the idea]</span>
+
+Show me 3 ways to say it:
+ 1. the way an A2 speaker would say it — simple, correct, clear
+ 2. the way a B1 speaker would say it
+ 3. the way a native would say it
+
+Then tell me which one I should practice this week, and why.</div>
+</div></section>
+
+<!-- ══════════════════════════════ HOMEWORK ══════════════════════════════ -->
+<section id="homework"><div class="wrap">
+  <div class="sec-label">Between lessons</div>
+  <h2 class="sec-title">Homework people actually do</h2>
+  <p class="lede">The test for every homework in this course: <em>would a student do this even if nobody checked?</em> Gap-fill worksheets fail that test. The six formats below pass it. Rotate them; never send the same type two weeks running.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>🔥 The 7-Day Streak Card</h4>
+      <p class="tiny">Seven boxes, one per day, five minutes each, each a different micro-task built from this lesson. Monday: say your five new words out loud in sentences. Tuesday: text a friend one sentence in English. Wednesday: find today's structure in a song. The student ticks boxes and brings the card back. <strong>Five minutes daily beats forty minutes on Sunday</strong> — and the card makes that visible.</p>
+    </div>
+    <div class="card">
+      <h4>🎤 The Voice Note</h4>
+      <p class="tiny">Sixty seconds, recorded on WhatsApp, sent before the next lesson. One prompt, tied to the lesson's can-do. You reply with a 30-second voice note — not corrections, a <em>reply</em>, as a person. This is the highest-value homework in the entire course and it costs you three minutes per student per week.</p>
+    </div>
+    <div class="card">
+      <h4>📺 The Series Mission</h4>
+      <p class="tiny">One scene, three passes. First with no subtitles — what did you understand? Then with English subtitles — what did you miss? Then with subtitles in your language — what surprised you? Harvest five phrases and bring them. It turns the thing they were going to do anyway into study.</p>
+    </div>
+    <div class="card">
+      <h4>🎵 The Song Autopsy</h4>
+      <p class="tiny">Gap-filled lyrics, plus a hunt: find every contraction, every <em>gonna</em> and <em>wanna</em>, and one line that breaks a grammar rule on purpose. Then sing it once, badly, alone in the car. Say that last part out loud — it gives permission, and it works.</p>
+    </div>
+    <div class="card">
+      <h4>🤖 AI Sparring</h4>
+      <p class="tiny">Run this lesson's AI Partner Card, then screenshot the one exchange you're proudest of and one you found hard. Both get looked at next lesson. Practice hours multiply; your prep time doesn't.</p>
+    </div>
+    <div class="card">
+      <h4>📸 Wild English</h4>
+      <p class="tiny">Photograph three pieces of English you find in the real world this week — a sign, a t-shirt, a menu, an ad, a mistake. Bring them. Students become collectors, and a collector notices English everywhere between lessons.</p>
+    </div>
+  </div>
+
+  <h3>Projects — one per mission, thirty across the course</h3>
+  <p class="tiny">The Mission Complete lesson is built around presenting a project. It's the visible artefact of five weeks of work — the thing a student shows their partner, keeps on their phone, and remembers three years later. Every project in the level tables above is <strong>recorded or filmed</strong> (so it can be compared later), <strong>personal</strong> (so it can't be copied), and <strong>finishable in a week</strong> (so it actually gets done).</p>
+</div></section>
+
+<!-- ══════════════════════════════ ASSESS ══════════════════════════════ -->
+<section id="assess"><div class="wrap">
+  <div class="sec-label">Retention</div>
+  <h2 class="sec-title">Making progress impossible to miss</h2>
+  <p class="lede">Students don't quit because lessons are bad. They quit because they can't feel movement. Three instruments fix that, and all three are cheap.</p>
+
+  <div class="grid3">
+    <div class="card">
+      <h4>1 · The Fluency Log</h4>
+      <p class="tiny">Sixty seconds recorded at the end of every lesson, in the LAND beat, stored by date. Thirty lessons later you play lesson 1 and lesson 30 back to back. It takes ninety seconds and it's worth more than any certificate you could print.</p>
+    </div>
+    <div class="card">
+      <h4>2 · The Can-Do Check</h4>
+      <p class="tiny">At every Mission Complete: eight can-do statements from that mission. The student self-rates 1–5, then you rate them. Where the two disagree is the most useful conversation in the whole course — usually the student is underrating themselves, and showing them that is a retention event.</p>
+    </div>
+    <div class="card">
+      <h4>3 · The Proof</h4>
+      <p class="tiny">End of level: a ten-minute recorded performance against the level's thirty can-dos, plus a certificate naming the level ("SAY IT — completed") rather than a book. Sharable, screenshot-able, and it markets you for free.</p>
+    </div>
+  </div>
+
+  <h3>Placement — you already have it</h3>
+  <p class="tiny">Your trial lesson is, structurally, a very good placement test that doesn't feel like one: the cognate wall establishes an A1 baseline, the pronunciation section identifies L1 interference, the "how often is this you?" grid diagnoses the blocker, and "in six months I want to…" captures the goal. One addition would complete it: <strong>a single spoken prompt at the end, recorded</strong>. That recording becomes entry zero of the Fluency Log, and gives you a defensible level placement instead of an impression.</p>
+
+  <div class="callout green">
+    <span class="ct">The renewal conversation writes itself</span>
+    "Here's what you couldn't do five weeks ago. Here's the recording. Here's the next mission." No persuasion required — you're just reading out evidence.
+  </div>
+</div></section>
+
+<!-- ══════════════════════════════ BUILD ══════════════════════════════ -->
+<section id="build"><div class="wrap">
+  <div class="sec-label">Practical</div>
+  <h2 class="sec-title">How to build this without stopping work</h2>
+  <p class="lede">A hundred and fifty lessons is a two-year build if you do it linearly — and you have students on Monday. So don't do it linearly.</p>
+
+  <table>
+    <tr><th>Phase</th><th>Build</th><th>Why this order</th></tr>
+    <tr><td class="mname">Phase 1<br><span class="tiny">weeks 1–3</span></td><td>The six Tier-1 mechanics as <strong>reusable components</strong>, plus a lesson template with the five beats pre-structured</td><td class="tiny">Build the machine before the product. Every later lesson then takes hours, not days. The Escalator and the Shadowing Studio are the two to build first.</td></tr>
+    <tr><td class="mname">Phase 2<br><span class="tiny">weeks 4–8</span></td><td><strong>A1 Mission 1</strong> — all five lessons, complete</td><td class="tiny">It's your front door: every new student sees it, so it earns back the most. It also stress-tests the template at the hardest level.</td></tr>
+    <tr><td class="mname">Phase 3<br><span class="tiny">ongoing</span></td><td>One mission ahead of your fastest student, at every level you currently teach</td><td class="tiny">Just-in-time building. You never build a lesson nobody has booked, and current students migrate mission by mission without disruption.</td></tr>
+    <tr><td class="mname">Phase 4</td><td>Convert existing AEF lessons where the topic already fits</td><td class="tiny">"Fasten your seat belts" is 70% of A2 M1 L2 already. Reframe the goal, swap the input for real media, replace one exercise with a mechanic. Half a day each, not two days.</td></tr>
+  </table>
+
+  <h3>What to add to your standards file</h3>
+  <ul>
+    <li><strong>The 5-Beat structure</strong> as the default lesson slide order, replacing the current ten-section order — which stays valid as a component list.</li>
+    <li><strong>The rotation rule</strong> — no mechanic twice in a row; one Tier-1 and three Tier-2 per mission.</li>
+    <li><strong>The LAND beat is mandatory</strong> — every lesson ends with a can-do statement and a 60-second recording.</li>
+    <li><strong>Every lesson declares its can-do goal on the cover slide</strong>, in the student's words, not grammatical terms. "By the end of today you can introduce yourself for a full minute" — not "Present simple: <em>be</em>."</li>
+    <li><strong>Media-first rule</strong> — the INPUT beat may not use a text written for learners. If no authentic source fits the topic, the topic is wrong.</li>
+    <li><strong>New mechanics get unique function names</strong> derived from the mechanic and slide id. Your existing collision rule already covers this, but it matters far more now that mechanics repeat across 150 files.</li>
+  </ul>
+
+  <div class="callout blue">
+    <span class="ct">One thing you could change on your profile today</span>
+    Nothing on your AmazingTalker profile currently names a destination the way your trial lesson does. Replacing "conversational English lessons" with something like — <strong>"Five levels. Thirty missions. You'll hear yourself get better: I record you on day one and play it back at the end of the level."</strong> — describes something no other tutor on that platform is offering.
+  </div>
+</div></section>
+
+<footer>
+  <p><b>OUT LOUD</b> — course blueprint · designed for Teacher Nanda · July 2026</p>
+  <p style="margin-top:8px;font-size:.8rem;opacity:.7">Companion file: the flagship lesson <b>A1 · M1 · L1 — "This Is Me"</b></p>
+</footer>
+
+</body>
+</html>
