@@ -2,6 +2,9 @@
 
 Last updated: July 2026 · covers the six lessons built so far
 
+> **Status: all audio installed and verified.** Every file below is present and every
+> lesson player has been checked against it. Nothing is outstanding.
+
 ---
 
 ## 1. The short version
@@ -26,12 +29,12 @@ exactly. Copy each file from your AEF audio library into the lesson folder liste
 
 | Lesson folder | File to copy | What it is | Required? |
 |---|---|---|---|
-| `A1-M1-L1/` | `AEF3e_Level_0_SB_1.02.mp3` | Starter 1A — the coffee shop conversations | Recommended |
-| `A1-M1-L1/` | `AEF3e_Level_0_SB_1.11.mp3`<br>`AEF3e_Level_0_SB_1.12.mp3` | Starter 1A — the /h/ /aɪ/ /i/ sound work | Optional |
-| `A1-M1-L2/` | `AEF3e_Level_0_SB_1.32.mp3`<br>`AEF3e_Level_0_SB_1.33.mp3` | Starter 1C — the alphabet | Recommended |
-| `A1-M1-L2/` | `AEF3e_Level_0_SB_1.07.mp3`<br>`AEF3e_Level_0_SB_2.21.mp3` | Numbers 0–10, then 11–100 | Optional |
-| `A2-M1-L1/` | `AEF3e_Level_2_SB_2.01.mp3`<br>`AEF3e_Level_2_SB_2.02.mp3` | Level 2, unit 2A "Where's my passport?" — vacation stories | Recommended |
-| `A2-M1-L1/` | `AEF3e_Level_2_SB_2.03.mp3`<br>`AEF3e_Level_2_SB_2.04.mp3` | Level 2, unit 2A — the `-ed` endings focus | Optional |
+| `A1-M1-L1/` | `AEF3e_Starter_SB_1.02-1.mp3` through `-4.mp3` | Starter 1A — four coffee shop conversations | ✅ Installed |
+| `A1-M1-L1/` | `AEF3e_Starter_SB_1.11.mp3`<br>`AEF3e_Starter_SB_1.12.mp3` | Starter 1A — the /h/ /aɪ/ /i/ sound work | Optional |
+| `A1-M1-L2/` | `AEF3e_Starter_SB_1.32.mp3`<br>`AEF3e_Starter_SB_1.33.mp3` | Starter 1C — the alphabet | Recommended |
+| `A1-M1-L2/` | `AEF3e_Starter_SB_1.07.mp3`<br>`AEF3e_Starter_SB_2.21.mp3` | Numbers 0–10, then 11–100 | Optional |
+| `A2-M1-L1/` | `AEF3e_Level_2_SB_2.1.mp3`<br>`AEF3e_Level_2_SB_2.2.mp3` | Level 2, unit 2A "Where's my passport?" — vacation stories | Recommended |
+| `A2-M1-L1/` | `AEF3e_Level_2_SB_2.3.mp3`<br>`AEF3e_Level_2_SB_2.4.mp3` | Level 2, unit 2A — the `-ed` endings focus | Optional |
 | `B1-M1-L1/` | `AEF3e_Level_3_SB_1.08.mp3`<br>`AEF3e_Level_3_SB_1.09.mp3` | Level 3, unit 1 — the two-part interview | Recommended |
 | `B1-M1-L1/` | `AEF3e_Level_2_SB_2.12.mp3` | Level 2, unit 2B — weak forms of *was* and *were* | Optional |
 | `B2-M1-L1/` | `AEF3e_Level_4_SB_1.07.mp3` | Level 4, unit 1 — "Reacting to what someone says" | Recommended |

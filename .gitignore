@@ -1,0 +1,31 @@
+# ─────────────────────────────────────────────────────────────
+# OUT LOUD — matches the AEF-Courses convention.
+#
+# mp3 audio files ARE committed and pushed. Students need
+# playback when they practice at home, and the deployed
+# GitHub Pages site is how they get it. This is deliberate.
+#
+# PDFs (student book / teacher's book / workbook pages) are
+# NOT pushed — those stay on the Desktop only.
+# ─────────────────────────────────────────────────────────────
+
+# Copyrighted textbook print material — kept locally, never pushed
+*.pdf
+
+# ── Student recordings (Fluency Log) — private, never pushed ──
+lesson-*.webm
+*fluency*/
+
+# ── Node dependencies (regenerable) ──
+node_modules/
+
+# ── OS junk ──
+.DS_Store
+Thumbs.db
+._*
+
+# ── Manual timestamped backups (git history replaces these) ──
+index_backup_*.html
+index_2*.html
+*_backup_*.html
+*.bak

@@ -6,36 +6,82 @@
 <title>OUT LOUD — English with Teacher Nanda</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#FAFAF8;color:#1C2B3A;line-height:1.6}
+
+/* ── Hero ── */
 .hero{background:linear-gradient(160deg,#1A1008 0%,#5A2A10 45%,#C9531F 100%);color:#fff;padding:72px 32px 60px;text-align:center;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 78% 22%,rgba(255,176,103,.18) 0%,transparent 58%)}
 .hero>*{position:relative;z-index:2}
-.kicker{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600}
+.kicker{font-size:1.06rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:600}
 h1{font-size:4.2rem;font-weight:900;letter-spacing:-.02em;line-height:1;margin:14px 0 6px}
 h1 em{font-style:normal;color:#FFB067}
 .tag{font-size:1.3rem;color:rgba(255,255,255,.88);font-weight:400}
-.sub{font-size:.98rem;color:rgba(255,255,255,.55);margin-top:20px}
-.wrap{max-width:1080px;margin:0 auto;padding:56px 32px 72px}
-h2{font-size:1.6rem;font-weight:900;color:#2A1A0E;margin:0 0 6px}
-.lede{color:#5A7186;margin-bottom:28px}
-.levels{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:44px}
-@media(max-width:900px){.levels{grid-template-columns:1fr 1fr}.hero h1{font-size:3rem}}
-.lv{border-radius:12px;padding:18px 16px;color:#fff;text-align:center}
-.lv b{display:block;font-size:.72rem;letter-spacing:.18em;opacity:.72;margin-bottom:6px}
-.lv span{font-size:1.06rem;font-weight:900;letter-spacing:.02em}
-.lv i{display:block;font-style:normal;font-size:.78rem;opacity:.82;margin-top:5px}
-.l1{background:#E85D2A}.l2{background:#2A8C5A}.l3{background:#0E7A8A}.l4{background:#1E4D8C}.l5{background:#5B2D8B}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));gap:16px}
-.c{display:block;background:#fff;border:1px solid #E8E2DA;border-radius:14px;padding:22px 24px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s,border-color .18s}
-.c:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(42,26,14,.12);border-color:#C9531F}
-.c .code{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#C9531F;margin-bottom:6px}
-.c .t{font-size:1.28rem;font-weight:800;color:#2A1A0E;margin-bottom:6px}
-.c .d{font-size:.9rem;color:#5A7186;line-height:1.5}
-.c.doc .code{color:#1E4D8C}
-footer{text-align:center;padding:34px;color:#8A7A6A;font-size:.86rem;border-top:1px solid #E8E2DA}
+.sub{font-size:1.06rem;color:rgba(255,255,255,.58);margin-top:20px}
+
+/* ── Layout ── */
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+section{padding:56px 0}
+section+section{border-top:1px solid #E8E2DA}
+.sec-label{font-size:1.06rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#C9531F;margin-bottom:8px}
+h2.sec-title{font-size:2.3rem;font-weight:900;color:#231708;line-height:1.15;margin-bottom:10px;letter-spacing:-.015em}
+.lede{font-size:1.16rem;color:#5A7186;max-width:760px;margin-bottom:30px}
+
+/* ── Path selector ── */
+.levels{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media(max-width:980px){.levels{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.levels{grid-template-columns:1fr}.hero h1{font-size:3rem}}
+.lv{--c:#E85D2A;border:none;border-radius:14px;padding:22px 16px;color:#fff;text-align:center;cursor:pointer;
+   font-family:inherit;background:var(--c);position:relative;transition:transform .18s,box-shadow .18s,filter .18s,opacity .18s;
+   opacity:.6;filter:saturate(.7)}
+.lv:hover{transform:translateY(-4px);opacity:.92;filter:none}
+.lv.on{opacity:1;filter:none;transform:translateY(-4px);box-shadow:0 10px 26px rgba(35,23,8,.3)}
+.lv .code{display:block;font-size:1.06rem;letter-spacing:.18em;opacity:.82;margin-bottom:8px;font-weight:700}
+.lv .name{display:block;font-size:1.24rem;font-weight:900;letter-spacing:.01em;line-height:1.15}
+.lv .desc{display:block;font-size:1.06rem;opacity:.88;margin-top:8px;font-weight:400;line-height:1.35}
+.lv .count{display:inline-block;margin-top:12px;background:rgba(255,255,255,.25);border-radius:12px;
+   padding:3px 12px;font-size:1.06rem;font-weight:700}
+.lv .tick{position:absolute;top:9px;right:13px;font-size:1.1rem;opacity:0;transition:opacity .18s}
+.lv.on .tick{opacity:1}
+.l-a1{--c:#E85D2A}.l-a2{--c:#2A8C5A}.l-b1{--c:#0E7A8A}.l-b2{--c:#1E4D8C}.l-c1{--c:#5B2D8B}
+
+/* ── Lesson panel ── */
+#panel{margin-top:34px;min-height:140px}
+.panel-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.panel-head h3{font-size:1.8rem;font-weight:900}
+.panel-head .pill{background:#F0E6DC;color:#5A4636;border-radius:14px;padding:3px 14px;font-size:1.06rem;font-weight:700}
+.panel-sub{color:#5A7186;font-size:1.12rem;margin-bottom:22px;max-width:740px}
+.empty{background:#fff;border:2px dashed #E0D8CE;border-radius:16px;padding:44px 30px;text-align:center;color:#8A7A6A;font-size:1.2rem}
+.empty b{color:#C9531F}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.c{display:block;background:#fff;border:1px solid #E8E2DA;border-radius:14px;padding:22px 24px;text-decoration:none;
+   color:inherit;transition:transform .18s,box-shadow .18s,border-color .18s;border-left:5px solid var(--c,#C9531F)}
+.c:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(35,23,8,.14);border-color:var(--c,#C9531F)}
+.c .code{font-size:1.06rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--c,#C9531F);margin-bottom:6px}
+.c .t{font-size:1.34rem;font-weight:800;color:#231708;margin-bottom:6px;line-height:1.2}
+.c .d{font-size:1.06rem;color:#5A7186;line-height:1.5}
+.c .go{margin-top:12px;font-size:1.06rem;font-weight:700;color:var(--c,#C9531F)}
+.soon{background:#FBF8F4;border:2px dashed #E0D8CE;border-radius:14px;padding:22px 24px;color:#8A7A6A;font-size:1.06rem;line-height:1.5}
+.soon b{color:#5A4636;display:block;font-size:1.16rem;margin-bottom:4px}
+
+/* ── Blueprint ── */
+.bp{background:linear-gradient(150deg,#1A1008 0%,#3A2010 55%,#5A2A10 100%);border-radius:18px;padding:36px 40px;color:#fff;
+   display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.bp-txt{flex:1;min-width:300px}
+.bp h3{font-size:1.9rem;font-weight:900;margin-bottom:10px;line-height:1.2}
+.bp p{color:rgba(255,255,255,.84);font-size:1.12rem;margin-bottom:6px}
+.bp .stats{display:flex;gap:26px;margin-top:18px;flex-wrap:wrap}
+.bp .stat b{display:block;font-size:1.7rem;font-weight:900;color:#FFB067;line-height:1}
+.bp .stat span{font-size:1.06rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.bp-btn{background:#FFB067;color:#231708;text-decoration:none;font-weight:800;font-size:1.16rem;
+   padding:15px 32px;border-radius:28px;white-space:nowrap;transition:transform .18s,filter .18s}
+.bp-btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
+
+footer{text-align:center;padding:36px;color:#8A7A6A;font-size:1.06rem;border-top:1px solid #E8E2DA}
 </style>
 </head>
 <body>
+
 <header class="hero">
   <div class="kicker">Conversational English with teacher Nanda</div>
   <h1>OUT <em>LOUD</em></h1>
@@ -43,49 +89,124 @@ footer{text-align:center;padding:34px;color:#8A7A6A;font-size:.86rem;border-top:
   <p class="sub">Five levels · thirty missions · a hundred and fifty lessons</p>
 </header>
 
-<div class="wrap">
-  <h2>The path</h2>
-  <p class="lede">Each level is named for who you become, not for the grammar inside it.</p>
-  <div class="levels">
-    <div class="lv l1"><b>A1</b><span>SAY IT</span><i>Your first words, out loud</i></div>
-    <div class="lv l2"><b>A2</b><span>GET AROUND</span><i>Handle the world</i></div>
-    <div class="lv l3"><b>B1</b><span>HOLD YOUR OWN</span><i>Have the conversation</i></div>
-    <div class="lv l4"><b>B2</b><span>SAY WHAT YOU MEAN</span><i>Precision and nuance</i></div>
-    <div class="lv l5"><b>C1</b><span>SOUND LIKE YOU</span><i>Your personality, in English</i></div>
-  </div>
+<!-- ══════════ PATHS ══════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-label">Choose your path</div>
+    <h2 class="sec-title">Five levels, five identities</h2>
+    <p class="lede">Each level is named for who you become, not for the grammar inside it. Click a path to see its lessons.</p>
 
-  <h2>Lessons</h2>
-  <p class="lede">Add one card here every time you build a new lesson folder.</p>
-  <div class="cards" id="cards"></div>
-</div>
+    <div class="levels" id="levels"></div>
+
+    <div id="panel">
+      <div class="empty">👆 Click a path above to see its lessons.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COURSE BLUEPRINT ══════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-label">For the teacher</div>
+    <h2 class="sec-title">Course Blueprint</h2>
+    <p class="lede">The full design behind OUT LOUD — every level, every mission, the activity bank, the media bank and the AI partner prompts.</p>
+
+    <div class="bp">
+      <div class="bp-txt">
+        <h3>The OUT LOUD Blueprint</h3>
+        <p>All five levels mapped end to end: can-do goals, mission arcs, the hidden grammar spine, projects and assessment.</p>
+        <p>Plus 24 activity mechanics, the song / film / TED library by level, 8 copy-paste AI partner prompts, and the build order.</p>
+        <div class="stats">
+          <div class="stat"><b>5</b><span>Levels</span></div>
+          <div class="stat"><b>30</b><span>Missions</span></div>
+          <div class="stat"><b>150</b><span>Lessons</span></div>
+          <div class="stat"><b>24</b><span>Mechanics</span></div>
+        </div>
+      </div>
+      <a class="bp-btn" href="blueprint.html">Open the Blueprint →</a>
+    </div>
+  </div>
+</section>
 
 <footer>OUT LOUD · Teacher Nanda · Cambridge CELTA certified</footer>
 
 <script>
-var courses = [
-  { level: 'B1', folder: 'B1-M1-L1', file: 'index.html', code: 'B1 · Mission 1 · Lesson 1', title: 'Set the Scene', desc: 'Open a story so people want the rest — past continuous for the background, past simple for the event.' },
-  { level: 'B2', folder: 'B2-M1-L1', file: 'index.html', code: 'B2 · Mission 1 · Lesson 1', title: 'Yes, But', desc: 'Disagree without shutting anyone down: concede, pivot, assert.' },
-  { level: 'A2', folder: 'A2-M1-L1', file: 'index.html', code: 'A2 · Mission 1 · Lesson 1', title: 'How Was Your Trip?', desc: 'Tell a trip from start to finish in the past — with -ed endings that people understand first time.' },
-  { level: 'A1', folder: 'A1-M1-L1', file: 'index.html', code: 'A1 · Mission 1 · Lesson 1', title: 'This Is Me', desc: 'Introduce yourself — name, country, job, city — and keep going for a full minute.' },
-  { level: 'A1', folder: 'A1-M1-L2', file: 'index.html', code: 'A1 · Mission 1 · Lesson 2', title: 'Say It Back', desc: 'Spell your name, give your number and email, and ask people to slow down.' },
-  { level: 'C1', folder: 'C1-M1-L1', file: 'index.html', code: 'C1 · Mission 1 · Lesson 1', title: 'Where the Weight Falls', desc: 'Place emphasis by restructuring the sentence — clefts, it-clefts and inversion.' }
+var LEVELS = [
+  { id:'A1', cls:'l-a1', color:'#E85D2A', name:'SAY IT',            desc:'Your first words, out loud',   blurb:'Your first 1,000 words — out loud. By the end you can hold a five-minute conversation with a stranger.' },
+  { id:'A2', cls:'l-a2', color:'#2A8C5A', name:'GET AROUND',        desc:'Handle the world',             blurb:'Handle the world in English. Travel for two weeks without switching out of English once.' },
+  { id:'B1', cls:'l-b1', color:'#0E7A8A', name:'HOLD YOUR OWN',     desc:'Have the conversation',        blurb:'Have the conversation, do not just survive it. Tell a story at dinner and get the laugh in the right place.' },
+  { id:'B2', cls:'l-b2', color:'#1E4D8C', name:'SAY WHAT YOU MEAN', desc:'Precision and nuance',         blurb:'Precision, opinion, nuance. Disagree with your boss and have it land exactly how you intended.' },
+  { id:'C1', cls:'l-c1', color:'#5B2D8B', name:'SOUND LIKE YOU',    desc:'Your personality, in English', blurb:'Your personality, in English. People stop complimenting your English and simply talk to you.' }
 ];
-var docs = [
-  { folder: '', file: 'blueprint.html', code: 'Course design', title: 'The OUT LOUD Blueprint', desc: 'All five levels, thirty missions, the activity bank, the media bank and the AI partner prompts.' }
+
+var COURSES = [
+  { level:'A1', folder:'A1-M1-L1', code:'Mission 1 · Lesson 1', title:'This Is Me',             desc:'Introduce yourself — name, country, job, city — and keep going for a full minute.' },
+  { level:'A1', folder:'A1-M1-L2', code:'Mission 1 · Lesson 2', title:'Say It Back',            desc:'Spell your name, give your number and email, and ask people to slow down.' },
+  { level:'A2', folder:'A2-M1-L1', code:'Mission 1 · Lesson 1', title:'How Was Your Trip?',     desc:'Tell a trip from start to finish in the past — with -ed endings people understand first time.' },
+  { level:'B1', folder:'B1-M1-L1', code:'Mission 1 · Lesson 1', title:'Set the Scene',          desc:'Open a story so people want the rest — past continuous for the background, past simple for the event.' },
+  { level:'B2', folder:'B2-M1-L1', code:'Mission 1 · Lesson 1', title:'Yes, But',               desc:'Disagree without shutting anyone down: concede, pivot, assert.' },
+  { level:'C1', folder:'C1-M1-L1', code:'Mission 1 · Lesson 1', title:'Where the Weight Falls', desc:'Place emphasis by restructuring the sentence — clefts, it-clefts and inversion.' }
 ];
-var host = document.getElementById('cards');
-courses.concat([]).forEach(function(c){
-  var a = document.createElement('a');
-  a.className = 'c'; a.href = c.folder + '/' + c.file;
-  a.innerHTML = '<div class="code">' + c.code + '</div><div class="t">' + c.title + '</div><div class="d">' + c.desc + '</div>';
-  host.appendChild(a);
+
+var host = document.getElementById('levels');
+var panel = document.getElementById('panel');
+var active = null;
+
+LEVELS.forEach(function (lv) {
+  var n = COURSES.filter(function (c) { return c.level === lv.id; }).length;
+  var b = document.createElement('button');
+  b.className = 'lv ' + lv.cls;
+  b.setAttribute('aria-pressed', 'false');
+  b.innerHTML = '<span class="tick">●</span>'
+    + '<span class="code">' + lv.id + '</span>'
+    + '<span class="name">' + lv.name + '</span>'
+    + '<span class="desc">' + lv.desc + '</span>'
+    + '<span class="count">' + n + (n === 1 ? ' lesson' : ' lessons') + '</span>';
+  b.onclick = function () { select(lv.id); };
+  host.appendChild(b);
 });
-docs.forEach(function(c){
-  var a = document.createElement('a');
-  a.className = 'c doc'; a.href = (c.folder ? c.folder + '/' : '') + c.file;
-  a.innerHTML = '<div class="code">' + c.code + '</div><div class="t">' + c.title + '</div><div class="d">' + c.desc + '</div>';
-  host.appendChild(a);
-});
+
+function select(id) {
+  active = (active === id) ? null : id;    /* click the same path again to close it */
+  render();
+}
+
+function render() {
+  Array.prototype.forEach.call(host.children, function (el, i) {
+    var on = LEVELS[i].id === active;
+    el.classList.toggle('on', on);
+    el.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+
+  if (!active) {
+    panel.innerHTML = '<div class="empty">👆 Click a path above to see its lessons.</div>';
+    return;
+  }
+
+  var lv = LEVELS.filter(function (l) { return l.id === active; })[0];
+  var list = COURSES.filter(function (c) { return c.level === active; });
+
+  var html = '<div class="panel-head">'
+    + '<h3 style="color:' + lv.color + '">' + lv.id + ' · ' + lv.name + '</h3>'
+    + '<span class="pill">' + list.length + (list.length === 1 ? ' lesson ready' : ' lessons ready') + '</span>'
+    + '</div>'
+    + '<p class="panel-sub">' + lv.blurb + '</p>'
+    + '<div class="cards">';
+
+  list.forEach(function (c) {
+    html += '<a class="c" style="--c:' + lv.color + '" href="' + c.folder + '/index.html">'
+      + '<div class="code">' + c.code + '</div>'
+      + '<div class="t">' + c.title + '</div>'
+      + '<div class="d">' + c.desc + '</div>'
+      + '<div class="go">Open the lesson →</div>'
+      + '</a>';
+  });
+
+  html += '<div class="soon"><b>More coming</b>Mission 1 finishes with five lessons, ending in a project and a Can-Do Check. New lessons appear here as they are built.</div>'
+       + '</div>';
+
+  panel.innerHTML = html;
+}
 </script>
 </body>
 </html>
