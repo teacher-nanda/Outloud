@@ -180,8 +180,7 @@ var OUTLOUD = (function () {
     $$('.flip', box).forEach(function (f) {
       f.onclick = function () {
         f.classList.toggle('open');
-        var s = f.getAttribute('data-say-word');
-        if (s && f.classList.contains('open')) say(s);
+        /* no automatic audio — the teacher speaks, or clicks a 🔊 icon */
       };
     });
   }
@@ -263,8 +262,7 @@ var OUTLOUD = (function () {
     box._done = (box._done || 0) + 1;
     var total = $$('.surg', box).length;
     var v = $('.vitals-f', box); if (v) v.style.width = (box._done / total * 100) + '%';
-    var full = $('[data-say-full]', s);
-    if (full) say(full.getAttribute('data-say-full'));
+    /* no automatic audio on heal — the teacher reads the corrected sentence */
   }
 
   /* ─────────── Escalator ─────────── */
@@ -322,7 +320,6 @@ var OUTLOUD = (function () {
   function memFlip(box, el) {
     if (box._lock || el.classList.contains('up') || el.classList.contains('done')) return;
     el.classList.add('up'); el.textContent = el.dataset.text;
-    if (el.dataset.sayWord) say(el.dataset.sayWord);
     box._open.push(el);
     if (box._open.length < 2) return;
     box._lock = true;
@@ -351,7 +348,7 @@ var OUTLOUD = (function () {
       t.onclick = function () {
         $$('.tile', box).forEach(function (x) { x.classList.remove('sel'); });
         t.classList.add('sel'); box._sel = t;
-        var s = t.getAttribute('data-say-word'); if (s) say(s);
+        /* no automatic audio on select — teacher speaks, or clicks a 🔊 icon */
       };
     });
     $$('.sortcol', box).forEach(function (col) {
